@@ -1,0 +1,59 @@
+{
+  "private": true,
+  "name": "@ccs-frontend/repository",
+  "description": "Used only for the development of CCS Frontend, see `packages/ccs-frontend/package.json` for the published `package.json`",
+  "engines": {
+    "node": "^20.9.0",
+    "npm": "^10.1.0"
+  },
+  "license": "MIT",
+  "workspaces": [
+    "packages/ccs-frontend",
+    "packages/ccs-frontend-review",
+    "shared/*"
+  ],
+  "scripts": {
+    "postinstall": "npm ls --depth=0",
+    "start": "npm run dev",
+    "dev": "concurrently \"npm run dev --workspace @ccs-frontend/review\" \"npm run dev --workspace ccs-frontend\" --kill-others --names \"app,pkg\" --prefix-colors \"red.dim,blue.dim\"",
+    "predev": "npm run build -- --ignore-scripts",
+    "build": "npm run build --workspace ccs-frontend --workspace @ccs-frontend/review",
+    "build:package": "cross-env-shell NODE_ENV=production npm run build:package --workspace ccs-frontend",
+    "postbuild:package": "jest --color --selectProjects \"Build tasks\" --testMatch \"**/build/package.unit.test.mjs\"",
+    "clean": "npm run clean --workspaces --if-present",
+    "pretest": "npm run build",
+    "test": "jest --color --ignoreProjects \"Build tasks\" --maxWorkers=50%",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "lint:js": "npm run lint:js:cli -- \"**/*.{cjs,js,md,mjs}\"",
+    "lint:js:fix": "npm run lint:js:cli -- --fix \"**/*.{cjs,js,md,mjs}\"",
+    "lint:js:cli": "eslint --cache --cache-location .cache/eslint --cache-strategy content --color --max-warnings 0",
+    "lint:scss": "npm run lint:scss:cli -- \"**/*.{md,scss}\"",
+    "lint:scss:cli": "stylelint --cache --cache-location .cache/stylelint --cache-strategy content --color --ignore-path .gitignore --max-warnings 0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.6",
+    "@babel/preset-env": "^7.24.6",
+    "@eslint/js": "^9.4.0",
+    "@ccs-frontend/config": "*",
+    "@ccs-frontend/helpers": "*",
+    "@ccs-frontend/lib": "*",
+    "@ccs-frontend/tasks": "*",
+    "@stylistic/eslint-plugin-js": "^2.1.0",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "eslint": "9.4.0",
+    "eslint-plugin-jest": "^28.5.0",
+    "jest": "^29.7.0",
+    "jest-environment-node-single-context": "^29.4.0",
+    "jest-puppeteer": "^10.0.1",
+    "jest-regex-util": "^29.4.3",
+    "jest-serializer-html": "^7.1.0",
+    "postcss-markdown": "^1.2.0",
+    "stylelint": "^16.6.1",
+    "stylelint-config-gds": "^2.0.0",
+    "stylelint-order": "^6.0.4"
+  },
+  "optionalDependencies": {
+    "puppeteer": "^22.10.0"
+  }
+}

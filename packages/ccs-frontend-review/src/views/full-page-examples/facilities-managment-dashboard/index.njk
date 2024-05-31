@@ -1,0 +1,94 @@
+---
+title: Digital Foundations - Facilities Management Dashboard
+---
+
+{% extends "layouts/full-page-example.njk" %}
+
+{% from "ccs/components/header/macro.njk" import ccsHeader %}
+{% from "ccs/components/footer/macro.njk" import ccsFooter %}
+{% from "ccs/components/dashboard-section/macro.njk" import ccsDashboardSection %}
+
+{% set pageTitle = example.title %}
+{% block pageTitle %}{{ pageTitle }} - CCS{% endblock %}
+
+{% block header %}
+  {{ ccsHeader({
+    serviceName: "Find a facilities management supplier",
+    serviceAuthentication: [
+      {
+        href: "#1",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-l">timothy.south@crowncommercial.gov.uk</span>
+      Your account
+    </h1>
+  </div>
+</div>
+
+
+{{ ccsDashboardSection({
+  panels: [
+    {
+      titleText: "Search for suppliers",
+      href: "#search-for-suppliers",
+      descriptionText:
+        "Find a shortlist of suppliers who can provide services to your locations"
+    },
+    {
+      titleText: "View your saved searches",
+      href: "#view-your-saved-searches",
+      descriptionText:
+        "Open your dashboard to view your previously saved searches"
+    }
+  ]
+}) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a class="govuk-!-font-size-19 govuk-link govuk-link--no-visited-state" href="#">Manage my details</a>
+    <p class="govuk-body">
+      Update and edit your contact details
+    </p>
+    <p class="govuk-body">
+      <a class="govuk-!-font-size-19 govuk-link govuk-link--no-visited-state" target="_blank" href="#">
+        View further information about the Facilities Management and Workplace Services framework RM6232
+      </a> (opens in a new tab)
+    </p>
+    <strong class="govuk-heading-s">
+      To return to this page at any time, just click on 'My account'.
+    </strong>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {{ ccsFooter({
+    meta: {
+      items: [
+        {
+          href: "#1",
+          text: "Cookie policy"
+        },
+        {
+          href: "#2",
+          text: "Cookie settings"
+        },
+        {
+          href: "#3",
+          text: "Privacy policy"
+        },
+        {
+          href: "#4",
+          text: "Accessibility statement"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}

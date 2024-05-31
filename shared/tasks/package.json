@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "name": "@ccs-frontend/tasks",
+  "description": "CCS Frontend shared tasks",
+  "main": "index.mjs",
+  "engines": {
+    "node": "^20.9.0",
+    "npm": "^10.1.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@ccs-frontend/config": "*",
+    "@ccs-frontend/lib": "*",
+    "@npmcli/run-script": "^7.0.4",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^3.0.0",
+    "plugin-error": "^2.0.1",
+    "postcss-load-config": "^5.1.0",
+    "rollup": "^4.18.0",
+    "sass-embedded": "^1.72.0",
+    "slug": "^9.1.0"
+  }
+}

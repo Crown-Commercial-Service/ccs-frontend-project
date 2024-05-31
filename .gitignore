@@ -1,0 +1,25 @@
+# Temporary only
+.cache/
+.tmp/
+.env
+
+# Node.js modules
+node_modules/
+
+# Test coverage
+coverage/
+
+# Build output
+dist/
+
+# Files to ignore
+.DS_Store
+*.log
+*.tsbuildinfo
+*.zip
+*.idea
+.snyk
+
+# Project lockfile only
+package-lock.json
+!/package-lock.json

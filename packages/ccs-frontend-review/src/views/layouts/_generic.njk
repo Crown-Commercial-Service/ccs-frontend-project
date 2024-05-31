@@ -1,0 +1,27 @@
+{% extends "govuk/template.njk" %}
+
+{% block head %}
+  <link rel="stylesheet" href="/stylesheets/app.min.css">
+
+  {% block styles %}{% endblock %}
+{% endblock %}
+
+{% block bodyStart %}
+  {% block banner %}
+    {% include "../partials/banner.njk" %}
+  {% endblock %}
+{% endblock %}
+
+{% set mainClasses = 'govuk-main-wrapper--auto-spacing' %}
+
+{% block bodyEnd %}
+  <script src="/javascripts/jquery.min.js"></script>
+  <script type="module" src="/javascripts/govuk-frontend.min.js"></script>
+  <script type="module" src="/javascripts/ccs-frontend.min.js"></script>
+  <script type="module">
+    import { initAll as GOVUKFrontendInitAll } from '/javascripts/govuk-frontend.min.js'
+    import { initAll as CCSFrontendInitAll } from '/javascripts/ccs-frontend.min.js'
+    GOVUKFrontendInitAll()
+    CCSFrontendInitAll()
+  </script>
+{% endblock %}

@@ -1,0 +1,40 @@
+////
+/// @group settings/colours
+////
+
+@import "../helpers/colour";
+
+// =========================================================
+// Generic
+// =========================================================
+
+/// Brand colour
+///
+/// @type Colour
+/// @access public
+
+$ccs-brand-colour: ccs-colour("red") !default;
+
+/// Text colour
+///
+/// @type Colour
+/// @access public
+
+
+/// Border colour
+///
+/// Used in for example borders, separators, rules and keylines.
+///
+/// @type Colour
+/// @access public
+
+$ccs-border-colour: ccs-colour("mid-grey") !default;
+
+/// Button colour
+///
+/// Override the GOV.UK Button colour
+///
+/// @type Colour
+/// @access public
+
+$govuk-button-background-colour: ccs-colour("button-green") !default;
