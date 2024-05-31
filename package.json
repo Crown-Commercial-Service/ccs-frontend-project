@@ -1,0 +1,64 @@
+{
+  "private": true,
+  "name": "ccs-frontend-project",
+  "description": "Used only for the development of CCS Frontend, see `package/package.json` for the published `package.json`",
+  "scripts": {
+    "dev": "gulp dev",
+    "test": "jest",
+    "pretest": "npm run lint && gulp compile",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "build": "gulp build",
+    "release": "./bin/release.sh",
+    "release:dry-run": "npm run release -- --dry-run",
+    "release-to-branch": "./bin/release-to-branch.sh",
+    "postinstall": "gulp postinstall"
+  },
+  "license": "MIT",
+  "jest": {
+    "preset": "jest-puppeteer",
+    "setupFilesAfterEnv": [
+      "./lib/jest/setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.24.1",
+    "@eslint/js": "^9.4.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@stylistic/eslint-plugin-js": "^2.1.0",
+    "accessible-autocomplete": "^3.0.0",
+    "autoprefixer": "^10.4.19",
+    "browser-sync": "^3.0.2",
+    "chalk": "^4.1.2",
+    "cheerio": "^1.0.0-rc.12",
+    "cookie-parser": "^1.4.6",
+    "cssnano": "^7.0.1",
+    "del": "^6.1.1",
+    "eslint": "^9.4.0",
+    "eslint-plugin-jest": "^28.5.0",
+    "express": "^4.19.2",
+    "fancy-log": "^2.0.0",
+    "globals": "^15.3.0",
+    "govuk-frontend": "^5.4.0",
+    "gulp": "^5.0.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^5.1.0",
+    "install-peers": "^1.0.4",
+    "jest": "28.1.3",
+    "jest-axe": "8.0.0",
+    "jest-environment-jsdom": "^28.1.3",
+    "jest-puppeteer": "10.0.1",
+    "jquery": "^3.7.1",
+    "js-cookie": "^3.0.5",
+    "node-emoji": "^2.1.3",
+    "nodemon": "^3.1.0",
+    "nunjucks": "^3.2.4",
+    "postcss": "^8.4.38",
+    "puppeteer": "^22.9.0",
+    "rollup": "^4.17.2",
+    "sass": "^1.77.2"
+  }
+}

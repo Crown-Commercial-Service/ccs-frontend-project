@@ -1,0 +1,8 @@
+/app/public
+
+node_modules
+package/govuk
+package/ccs/
+src/govuk
+
+.snyk

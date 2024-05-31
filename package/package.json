@@ -1,0 +1,35 @@
+{
+  "name": "ccs-frontend",
+  "description": "CCS Frontend contains assets and components used in CCS projects",
+  "version": "6.4.0",
+  "peerDependencies": {
+    "accessible-autocomplete": "^3.0.0",
+    "govuk-frontend": "^5.4.0",
+    "jquery": "^3.x"
+  },
+  "main": "ccs/all.js",
+  "sass": "ccs/all.scss",
+  "engines": {
+    "node": ">= 20.9.0"
+  },
+  "author": {
+    "name": "Crown Commercial Service"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Crown-Commercial-Service/ccs-frontend-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Crown-Commercial-Service/ccs-frontend-project/issues"
+  },
+  "homepage": "https://github.com/Crown-Commercial-Service/ccs-frontend-project#readme",
+  "keywords": [
+    "govuk",
+    "frontend",
+    "design system",
+    "template",
+    "crown commercial service",
+    "ccs"
+  ],
+  "license": "MIT"
+}

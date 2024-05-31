@@ -1,0 +1,25 @@
+////
+/// @group settings/colours
+////
+
+/// Colour palette
+///
+/// @type Map
+///
+/// @prop $colour - Representation for the given $colour, where $colour is the
+///   friendly name for the colour (e.g. "red": #ff0000);
+///
+/// @access public
+
+$ccs-colours: (
+  "light-green": #F0FFF1,
+  "dark-green": #006435,
+  "button-green": #007e8a,
+  "red": #9b1a47,
+  "dark-red": #85163d,
+  "black": #2f2f2f,
+  "dark-grey": #6f777b,
+  "mid-grey": #b1b4b6,
+  "grey": #dee0e2,
+  "light-grey": #f8f8f8,
+) !default;
