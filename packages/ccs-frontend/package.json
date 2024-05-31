@@ -1,0 +1,77 @@
+{
+  "name": "ccs-frontend",
+  "description": "CCS Frontend contains assets and components used in CCS projects",
+  "version": "0.1.0",
+  "main": "dist/ccs/all.bundle.js",
+  "module": "dist/ccs/all.mjs",
+  "sass": "dist/ccs/all.scss",
+  "files": [
+    "ccs",
+    "package.json",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "sass": "./dist/ccs/all.scss",
+      "import": "./dist/ccs/all.mjs",
+      "require": "./dist/ccs/all.bundle.js",
+      "default": "./dist/ccs/all.bundle.js"
+    },
+    "./*": "./*",
+    "./dist/": "./dist/",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">= 4.2.0"
+  },
+  "author": {
+    "name": "Crown Commercial Service"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tim-s-ccs/ccs-frontend-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tim-s-ccs/ccs-frontend-project"
+  },
+  "homepage": "https://github.com/tim-s-ccs/ccs-frontend-project#readme",
+  "keywords": [
+    "crown commercial service",
+    "ccs",
+    "frontend",
+    "design system",
+    "template"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "gulp dev --color",
+    "prebuild:package": "npm run clean:package",
+    "build": "npm run build:package",
+    "build:package": "gulp build:package --color",
+    "clean": "npm run clean:package",
+    "clean:package": "del-cli dist",
+    "version": "echo $npm_package_version"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.6",
+    "@ccs-frontend/config": "*",
+    "@ccs-frontend/lib": "*",
+    "@ccs-frontend/tasks": "*",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-replace": "^5.0.5",
+    "@rollup/plugin-terser": "^0.4.4",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^7.0.1",
+    "cssnano-preset-default": "^7.0.1",
+    "del-cli": "^5.1.0",
+    "gulp": "^4.0.2",
+    "postcss": "^8.4.36",
+    "postcss-scss": "^4.0.9",
+    "puppeteer": "^22.10.0"
+  },
+  "peerDependencies": {
+    "govuk-frontend": "^5.4.0",
+    "jquery": "^3.x"
+  }
+}
