@@ -1,13 +1,94 @@
 version: 2
+
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: weekly
-    time: "03:00"
-  open-pull-requests-limit: 10
-- package-ecosystem: "github-actions"
-  directory: "/"
-  schedule:
-    interval: weekly
-    time: "03:00"
+  # Update npm packages
+  - package-ecosystem: npm
+    directory: /
+    open-pull-requests-limit: 10
+
+    # Group packages into shared PR
+    groups:
+      babel:
+        patterns:
+          - '@babel/*'
+
+      lint:
+        patterns:
+          - 'eslint'
+          - 'eslint-*'
+          - '@eslint/*'
+          - 'stylelint'
+          - 'stylelint-*'
+          - '@stylistic/*'
+
+      postcss:
+        patterns:
+          - 'autoprefixer'
+          - 'cssnano'
+          - 'cssnano-*'
+          - 'postcss'
+          - 'postcss-*'
+
+      rollup:
+        patterns:
+          - '@rollup/*'
+          - 'rollup'
+          - 'rollup-*'
+
+      test:
+        patterns:
+          - '@axe-core/*'
+          - '@jest/*'
+          - '@puppeteer/*'
+          - 'jest'
+          - 'jest-*'
+          - 'puppeteer'
+          - 'puppeteer-*'
+
+    # Schedule run every Monday, local time
+    schedule:
+      interval: weekly
+      day: "sunday"
+
+    versioning-strategy: increase
+
+    allow:
+      # Include direct package.json updates
+      - dependency-type: direct
+
+      # Include indirect browser data updates
+      # https://caniuse.com
+      - dependency-name: caniuse-lite
+
+  # Update GitHub Actions
+  - package-ecosystem: github-actions
+    directory: /
+
+    # Schedule run every Monday, local time
+    schedule:
+      interval: weekly
+      day: "sunday"
+
+  # Update GitHub Actions (Build)
+  - package-ecosystem: github-actions
+    directory: /.github/workflows/actions/build
+
+    schedule:
+      interval: weekly
+      day: "sunday"
+
+  # Update GitHub Actions (Install dependencies)
+  - package-ecosystem: github-actions
+    directory: /.github/workflows/actions/install-node
+
+    schedule:
+      interval: weekly
+      day: "sunday"
+
+  # Update GitHub Actions (Setup Node.js)
+  - package-ecosystem: github-actions
+    directory: /.github/workflows/actions/setup-node
+
+    schedule:
+      interval: weekly
+      day: "sunday"

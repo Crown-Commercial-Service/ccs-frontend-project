@@ -1,0 +1,154 @@
+---
+title: Create a Print Marketplace buyer account
+---
+
+{% extends "layouts/full-page-example.njk" %}
+
+{% from "ccs/components/header/macro.njk" import ccsHeader %}
+{% from "ccs/components/footer/macro.njk" import ccsFooter %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/password-input/macro.njk" import govukPasswordInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set pageTitle = example.title %}
+{% block pageTitle %}{{ pageTitle }} - CCS{% endblock %}
+
+{% block header %}
+  {{ ccsHeader({
+    serviceName: "Sign in to the Print Marketplace",
+    navigationPrimary: [
+      {
+        href: "#1",
+        text: "Back to start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% call govukFieldset({
+      legend: {
+        text: "Create a Print Marketplace buyer account",
+        classes: "govuk-fieldset__legend--xl",
+        isPageHeading: true
+      }
+    }) %}
+      <p class="govuk-body-l">
+        You must be employed by, or represent, a public sector organisation.
+      </p>
+
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        id: "email",
+        name: "email",
+        hint: {
+          text: 'We will send a confirmation code to this address.'
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        id: "first_name",
+        name: "first_name",
+        hint: {
+          text: 'Add your first name here.'
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "last_name",
+        name: "last_name",
+        hint: {
+          text: 'Add your last name here.'
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Organisation name"
+        },
+        id: "organisation_name",
+        name: "organisation_name",
+        hint: {
+          html: "Enter your organisation's full name. We will verify your organisation name to confirm you can use this service. If your organisation is not listed please contact CCS.<br><br>You can choose alternative delivery and invoice addresses later on."
+        }
+      }) }}
+
+      {% call govukFieldset({
+        legend: {
+          text: "Create a password you’ll remember",
+          classes: "govuk-fieldset__legend--m"
+        }
+      }) %}
+        <p class="govuk-body govuk-!-margin-bottom-1">Your password must have:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-2 govuk-!-margin-bottom-6">
+          <li>
+            at least 10 characters
+          </li>
+          <li>
+            at least one capital letter
+          </li>
+          <li>
+            at least one number
+          </li>
+        </ul>
+
+        {{ govukPasswordInput({
+          label: {
+            text: "Password"
+          },
+          id: "password",
+          name: "password"
+        }) }}
+
+        {{ govukPasswordInput({
+          label: {
+            text: "Confirm your password"
+          },
+          id: "password_confirmation",
+          name: "password_confirmation"
+        }) }}
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Create account"
+      }) }}
+    {% endcall %}
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {{ ccsFooter({
+    meta: {
+      items: [
+        {
+          href: "#1",
+          text: "Cookie policy"
+        },
+        {
+          href: "#2",
+          text: "Cookie settings"
+        },
+        {
+          href: "#3",
+          text: "Privacy policy"
+        },
+        {
+          href: "#4",
+          text: "Accessibility statement"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}

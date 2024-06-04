@@ -1,8 +1,29 @@
-/app/public
+# Temporary only
+.cache/
+.tmp/
+.env
 
-node_modules
-package/govuk
-package/ccs/
-src/govuk
+# Node.js modules
+node_modules/
 
+# Test coverage
+coverage/
+
+# Build output
+dist/
+
+# Files to ignore
+.DS_Store
+*.log
+*.tsbuildinfo
+*.zip
+*.idea
 .snyk
+
+# Project lockfile only
+package-lock.json
+!/package-lock.json
+
+# TODO: Remove later
+# Old project files
+old/

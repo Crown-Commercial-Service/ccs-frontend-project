@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "@ccs-frontend/config",
+  "description": "CCS Frontend shared config",
+  "main": "index.js",
+  "engines": {
+    "node": "^20.9.0",
+    "npm": "^10.1.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ccs-frontend": "*"
+  }
+}

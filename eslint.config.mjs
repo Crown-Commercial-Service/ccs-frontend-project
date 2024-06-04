@@ -16,9 +16,9 @@ export default [
   },
   {
     ignores: [
-      'src/govuk/*',
-      'package/*',
-      'app/public/assets/javascript/all.js'
+      'old/*',
+      'packages/ccs-frontend/dist/*',
+      'packages/ccs-frontend-review/dist/*',
     ]
   },
   pluginJs.configs.recommended,
@@ -47,8 +47,8 @@ export default [
   },
   {
     files: [
-      '**/*.test.js',
-      'lib/jest/*.js'
+      '**/*.test.{cjs,js,mjs}',
+      'shared/helpers/jest/*.{cjs,js,mjs}'
     ],
     ...pluginJest.configs['flat/recommended']
   }
