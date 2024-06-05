@@ -15,6 +15,7 @@ import {
  * Build target tasks
  */
 gulp.task('build:package', build.package(targets.package))
+gulp.task('build:release', build.release(targets.release))
 gulp.task('dev', build.dev(options))
 
 /**

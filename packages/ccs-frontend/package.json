@@ -47,10 +47,13 @@
   "scripts": {
     "dev": "gulp dev --color",
     "prebuild:package": "npm run clean:package",
+    "prebuild:release": "npm run clean:release",
     "build": "npm run build:package",
     "build:package": "gulp build:package --color",
+    "build:release": "gulp build:release --color",
     "clean": "npm run clean:package",
     "clean:package": "del-cli dist",
+    "clean:release": "del-cli ../../dist --force",
     "version": "echo $npm_package_version"
   },
   "devDependencies": {

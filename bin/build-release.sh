@@ -15,6 +15,7 @@ echo " "
 echo "This will:"
 echo "- run the test suite"
 echo "- build CCS Frontend into the 'packages/ccs-frontend/dist/' directory"
+echo "- build GOV.UK Frontend into the 'dist/' directory"
 echo "- commit all changes and push the branch to remote"
 echo " "
 
@@ -27,6 +28,7 @@ fi
 
 npm run test
 npm run build:package
+npm run build:release
 
 ALL_PACKAGE_VERSION=$(npm run version --silent --workspace ccs-frontend)
 TAG="v$ALL_PACKAGE_VERSION"

@@ -16,5 +16,6 @@ export const options = {
  * Customised build paths by target
  */
 export const targets = {
+  release: { ...options, destPath: join(paths.root, 'dist') },
   package: options
 }
