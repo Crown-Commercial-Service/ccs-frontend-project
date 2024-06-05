@@ -1,6 +1,8 @@
 # Changelog
 
-## 1.0.0-beta.0 (Pre-release)
+## Unreleased
+
+## 1.0.0-beta.1 (Pre-release)
 
 🆕 New features:
 
