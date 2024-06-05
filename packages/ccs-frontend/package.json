@@ -6,7 +6,7 @@
   "module": "dist/ccs/all.mjs",
   "sass": "dist/ccs/all.scss",
   "files": [
-    "ccs",
+    "dist",
     "package.json",
     "README.md"
   ],
