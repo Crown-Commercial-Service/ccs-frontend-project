@@ -159,6 +159,10 @@ jobs:
             name: test-build-package
             run: npm run build:package
 
+          - description: Verify distribution build
+            name: test-build-release
+            run: npm run build:release
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.6

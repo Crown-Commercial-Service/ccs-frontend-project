@@ -12,6 +12,9 @@ coverage/
 # Build output
 dist/
 
+# Build output (committed)
+!/dist
+
 # Files to ignore
 .DS_Store
 *.log

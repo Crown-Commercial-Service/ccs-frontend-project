@@ -16,6 +16,7 @@ export default [
   },
   {
     ignores: [
+      'dist/*',
       'packages/ccs-frontend/dist/*',
       'packages/ccs-frontend-review/dist/*',
     ]
