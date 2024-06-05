@@ -15,7 +15,7 @@ echo " "
 echo "This will:"
 echo "- run the test suite"
 echo "- build CCS Frontend into the 'packages/ccs-frontend/dist/' directory"
-echo "- build GOV.UK Frontend into the 'dist/' directory"
+echo "- build CCS Frontend into the 'dist/' directory"
 echo "- commit all changes and push the branch to remote"
 echo " "
 
