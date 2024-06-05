@@ -12,7 +12,7 @@
     "@ccs-frontend/config": "*",
     "@ccs-frontend/lib": "*",
     "@npmcli/run-script": "^7.0.4",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-cli": "^3.0.0",
     "plugin-error": "^2.0.1",
     "postcss-load-config": "^5.1.0",
