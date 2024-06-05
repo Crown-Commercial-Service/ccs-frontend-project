@@ -1,7 +1,7 @@
 {
   "name": "ccs-frontend",
   "description": "CCS Frontend contains assets and components used in CCS projects",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "main": "dist/ccs/all.bundle.js",
   "module": "dist/ccs/all.mjs",
   "sass": "dist/ccs/all.scss",
