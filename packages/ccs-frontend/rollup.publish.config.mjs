@@ -1,6 +1,7 @@
 import config from '@ccs-frontend/config'
 import { babel } from '@rollup/plugin-babel'
 import replace from '@rollup/plugin-replace'
+import typescript from '@rollup/plugin-typescript'
 import { defineConfig } from 'rollup'
 
 /**
@@ -55,7 +56,7 @@ export default defineConfig(({ i: input }) => ({
    */
   plugins: [
     replace({
-      include: '**/common/ccs-frontend-version.mjs',
+      include: '**/common/ccs-frontend-version.ts',
       preventAssignment: true,
 
       // Add CCS Frontend release version
@@ -63,6 +64,7 @@ export default defineConfig(({ i: input }) => ({
     }),
     babel({
       babelHelpers: 'bundled'
-    })
+    }),
+    typescript()
   ]
 }))

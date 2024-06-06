@@ -13,7 +13,7 @@ export const compile = (options) =>
      * Compile CCS Frontend JavaScript for component entry points
      */
     task.name('compile:js \'components\'', () =>
-      scripts.compile('**/components/*/!(*.test).mjs', {
+      scripts.compile('**/components/*/!(*.test).ts', {
         ...options,
 
         srcPath: join(options.srcPath, 'ccs'),
@@ -26,7 +26,7 @@ export const compile = (options) =>
      * Compile CCS Frontend JavaScript for main entry point only
      */
     task.name('compile:js \'entry\'', () =>
-      scripts.compile('**/all.mjs', {
+      scripts.compile('**/all.ts', {
         ...options,
 
         srcPath: join(options.srcPath, 'ccs'),
@@ -39,7 +39,7 @@ export const compile = (options) =>
      * Compile CCS Frontend JavaScript (minified) for main entry point only
      */
     task.name('compile:js \'minified\'', () =>
-      scripts.compile('**/all.mjs', {
+      scripts.compile('**/all.ts', {
         ...options,
 
         srcPath: join(options.srcPath, 'ccs'),

@@ -159,13 +159,13 @@ async function render(page, componentName, renderOptions, browserOptions) {
         }
 
         // Find all matching modules
-        const $modules = document.querySelectorAll(selector)
+        const $modules = $(selector)
 
         try {
           // Loop and initialise all $modules or use default
           // selector `null` return value when none found
-          ;($modules.length ? $modules : [null]).forEach(
-            ($module) => new namespace[exportName]($module, config).init()
+          ;($modules).each(
+            (_index, module) => new namespace[exportName]($(module), config).init()
           )
         } catch ({ name, message }) {
           return { name, message }

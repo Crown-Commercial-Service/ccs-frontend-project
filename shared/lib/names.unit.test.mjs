@@ -102,15 +102,15 @@ describe('packageResolveToPath', () => {
       resolvedPath: join(paths.package, 'package.json')
     },
     {
-      packageEntry: 'ccs-frontend/src/ccs/all.mjs',
-      resolvedPath: join(paths.package, 'src/ccs/all.mjs')
+      packageEntry: 'ccs-frontend/src/ccs/all.ts',
+      resolvedPath: join(paths.package, 'src/ccs/all.ts')
     },
     {
-      packageEntry: 'ccs-frontend/src/ccs/all.mjs',
-      options: { modulePath: 'components/header/header.mjs' },
+      packageEntry: 'ccs-frontend/src/ccs/all.ts',
+      options: { modulePath: 'components/header/header.ts' },
       resolvedPath: join(
         paths.package,
-        'src/ccs/components/header/header.mjs'
+        'src/ccs/components/header/header.ts'
       )
     }
   ]

@@ -24,7 +24,7 @@ export default (options) =>
 
     // Compile GOV.UK Frontend JavaScript
     task.name('compile:js \'release\'', () =>
-      scripts.compile('all.mjs', {
+      scripts.compile('all.ts', {
         ...options,
 
         srcPath: join(options.srcPath, 'ccs'),
