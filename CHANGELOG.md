@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## 1.0.0-beta.2 (Pre-release)
+## 1.0.0-beta.3 (Pre-release)
 
 🆕 New features:
 
