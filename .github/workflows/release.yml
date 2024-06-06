@@ -5,7 +5,7 @@ on:
     types: [released]
 
 jobs:
-  run-ci:
+  create-release:
     uses: ./.github/workflows/publish_package.yml
     with:
       npm_tag: latest

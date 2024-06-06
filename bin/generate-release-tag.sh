@@ -1,16 +1,6 @@
 #!/bin/sh
 set -e
 
-source ./bin/generate-npm-tag.sh
-
-# Check npm tag looks as expected
-# https://npm.github.io/publishing-pkgs-docs/updating/using-tags.html#publishing-with-tags
-echo "This will create the following tag:"
-echo $NPM_TAG
-echo " "
-
-read -r -p "Does this look correct? [y/N] " continue_prompt
-
 echo "Starting a release..."
 echo " "
 echo "This will:"
