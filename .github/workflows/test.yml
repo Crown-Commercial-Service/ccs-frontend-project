@@ -62,6 +62,11 @@ jobs:
             name: lint-js
             run: npm run lint:js
             cache: .cache/eslint
+          
+          - description: Lint TypeScript
+            name: lint-ts
+            run: npm run lint:ts
+            cache: .cache/tslint
 
     steps:
       - name: Checkout

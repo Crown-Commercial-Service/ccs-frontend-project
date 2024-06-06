@@ -94,7 +94,7 @@ describe('dist/', () => {
     })
 
     it('should contain correct version number', () => {
-      expect(javascript).toContain(`var version="${pkg.version}"`)
+      expect(javascript).toContain(`const version="${pkg.version}"`)
     })
 
     it('should contain source mapping URL', () => {
@@ -117,10 +117,10 @@ describe('dist/', () => {
 
     it('should contain relative paths to sources', () => {
       expect(sourcemap.sources).toContain(
-        '../packages/ccs-frontend/src/ccs/init.mjs'
+        '../packages/ccs-frontend/src/ccs/init.ts'
       )
       expect(sourcemap.sources).toContain(
-        '../packages/ccs-frontend/src/ccs/common/ccs-frontend-version.mjs'
+        '../packages/ccs-frontend/src/ccs/common/ccs-frontend-version.ts'
       )
     })
   })

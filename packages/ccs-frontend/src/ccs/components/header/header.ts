@@ -1,9 +1,13 @@
-class Header {
-  static moduleName = 'ccs-header'
+import { CCSFrontendComponent } from '../../ccs-frontend-component'
 
-  constructor () {
-    this.$menuButton = $('.ccs-js-header-toggle')
-    this.$menu = $(`#${this.$menuButton.attr('aria-controls')}`)
+class Header implements CCSFrontendComponent {
+  static moduleName = 'ccs-header'
+  $menuButton: JQuery<HTMLButtonElement>
+  $menu: JQuery<HTMLElement>
+
+  constructor ($header: JQuery<HTMLElement>) {
+    this.$menuButton = $header.find<HTMLButtonElement>('.ccs-js-header-toggle')
+    this.$menu = $header.find<HTMLElement>(`#${this.$menuButton.attr('aria-controls')}`)
   }
 
   init () {
@@ -11,7 +15,7 @@ class Header {
     this.setEventListeners()
   }
 
-  syncState (isVisible) {
+  syncState (isVisible: boolean) {
     this.$menuButton.toggleClass('ccs-header__menu-button--open', isVisible)
     this.$menuButton.attr('aria-expanded', String(isVisible))
   }

@@ -60,6 +60,7 @@ describe('packages/ccs-frontend/dist/', () => {
       '!**/__snapshots__/',
       '!**/__snapshots__/**',
       '!**/tsconfig?(.build).json',
+      '!**/ccs-frontend-component.*',
       '!README.md'
     ]
 
@@ -67,9 +68,9 @@ describe('packages/ccs-frontend/dist/', () => {
     const listingExpected = listingSource
       .filter(filterPath(filterPatterns))
 
-      // All source `**/*.mjs` files compiled to ES modules
+      // All source `**/*.ts` files compiled to ES modules
       .flatMap(
-        mapPathTo(['**/*.mjs'], ({ dir: requirePath, name }) => [
+        mapPathTo(['**/*.ts'], ({ dir: requirePath, name }) => [
           join(requirePath, `${name}.mjs`),
           join(requirePath, `${name}.mjs.map`) // with source map
         ])
@@ -151,7 +152,8 @@ describe('packages/ccs-frontend/dist/', () => {
       'postcss.config.mjs',
       'postcss.config.unit.test.mjs',
       'rollup.publish.config.mjs',
-      'rollup.release.config.mjs'
+      'rollup.release.config.mjs',
+      'tsconfig.json'
     ])
   })
 
@@ -188,7 +190,7 @@ describe('packages/ccs-frontend/dist/', () => {
         )
 
         // Look for ES modules `version` named export
-        expect(contents).toContain(`var version = '${pkg.version}';`)
+        expect(contents).toContain(`const version = '${pkg.version}';`)
         expect(contents).toContain('export { version };')
       })
     })
@@ -212,7 +214,8 @@ describe('packages/ccs-frontend/dist/', () => {
           const componentClassName = componentNameToClassName(componentName)
 
           expect(contents).toContain(
-            `var ${componentClassName} = function () {`
+            // Trailing space is important to not match `class ${componentClassName}Something`
+            `class ${componentClassName} `
           )
           expect(contents).toContain(
             `exports.${componentClassName} = ${componentClassName};`
