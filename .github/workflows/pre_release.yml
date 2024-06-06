@@ -5,7 +5,7 @@ on:
     types: [prereleased]
 
 jobs:
-  run-ci:
+  create-pre-release:
     uses: ./.github/workflows/publish_package.yml
     with:
       npm_tag: next

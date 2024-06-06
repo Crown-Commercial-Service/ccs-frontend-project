@@ -31,6 +31,6 @@ jobs:
       run: npm run build:package
 
     - name: Publish package
-      run: npm publish --dry-run --workspace ccs-frontend --tag ${{ inputs.npm_tag }}
+      run: npm publish --workspace ccs-frontend --tag ${{ inputs.npm_tag }}
       env:
         NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
