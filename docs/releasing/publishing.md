@@ -56,6 +56,42 @@ Developers should pair on releases. When remote working, it can be useful to be 
 
 ## Publish a release to npm
 
+### Option 1. Create release in GitHub (automated publish)
+
+1. Check out the **main** branch and pull the latest changes.
+
+   If there was an interruption between the raising of the PR and its merge,
+   or it's another developer running the publication to npm, rebuild the package with:
+
+   ```shell
+   npm run build:package
+   ```
+
+2. Run `npm run generate-release-tag`, which will prompt you to check whether the release tag looks as expected.
+
+3. You will now be prompted to continue or cancel the release. Check the details and enter `y` to continue. If something does not look right, press `N` to cancel the release.
+
+   This step will create a ZIP file containing the release in the root of your ccs-frontend git directory. You will need this file when creating the GitHub release.
+
+   This step will also automatically create a tag in GitHub
+
+4. Follw the steps [from the following section](#create-a-release-on-github) and create a GitHub release.
+
+   This will automatically trigger a job to release the package to NPM with the `latest` tag
+
+5. Verify the presence of the pre-release and its tag on [npm](https://www.npmjs.com/package/ccs-frontend?activeTab=versions)
+
+   If the pre-release has been assigned the wrong tag (mistakes happen),
+   you can use [`npm dist-tag`](https://docs.npmjs.com/cli/v8/commands/npm-dist-tag) to quickly correct.
+
+6. Have a quick look at the diff of the new package with the previous one at:
+
+   ```txt
+   https://diff.intrinsic.com/ccs-frontend-project/<PREVIOUS_VERSION_NUMBER>/<RELEASED_VERSION_NUMBER>
+   ```
+
+### Option 2. Use publish script (manual publish)
+
 1. Check out the **main** branch and pull the latest changes.
 
    If there was an interruption between the raising of the PR and its merge,
@@ -78,7 +114,7 @@ Developers should pair on releases. When remote working, it can be useful to be 
 
    This step will create a ZIP file containing the release in the root of your ccs-frontend git directory. You will need this file when creating the GitHub release.
 
-   This step will also automatically create a tag in Github which you can use to create a Github release in the following section.
+   This step will also automatically create a tag in Github which you can use to create a [Github release in the following section](#create-a-release-on-github).
 
 6. Verify the presence of the release and its tag on [npm](https://www.npmjs.com/package/ccs-frontend?activeTab=versions)
 
