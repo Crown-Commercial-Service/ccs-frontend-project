@@ -1,0 +1,13 @@
+name: "Publish package to NPM - Release"
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  run-ci:
+    uses: ./.github/workflows/publish_package.yml
+    with:
+      npm_tag: latest
+    secrets:
+      npm_token: ${{ secrets.NPM_TOKEN }}

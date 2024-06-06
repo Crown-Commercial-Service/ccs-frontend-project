@@ -18,6 +18,7 @@
     "build-release": "./bin/build-release.sh",
     "publish-release": "./bin/publish-release.sh",
     "publish-preview": "./bin/publish-preview.sh",
+    "generate-release-tag": "./bin/generate-release-tag.sh",
     "dev": "concurrently \"npm run dev --workspace @ccs-frontend/review\" \"npm run dev --workspace ccs-frontend\" --kill-others --names \"app,pkg\" --prefix-colors \"red.dim,blue.dim\"",
     "predev": "npm run build -- --ignore-scripts",
     "build": "npm run build --workspace ccs-frontend --workspace @ccs-frontend/review",

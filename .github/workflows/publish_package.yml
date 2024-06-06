@@ -1,0 +1,36 @@
+name: "Publish package to NPM - Workflow"
+
+on:
+  workflow_call:
+    inputs:
+      npm_tag:
+        description: 'NPM tag for the release (latest or next)'
+        default: latest
+        required: true
+        type: string
+    secrets:
+      npm_token:
+        description: 'The npm token for publishing'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: '.nvmrc'
+        registry-url: 'https://registry.npmjs.org'
+    
+    - name: Install NPM dependencies
+      run: npm install
+
+    - name: Build the package
+      run: npm run build:package
+
+    - name: Publish package
+      run: npm publish --dry-run --workspace ccs-frontend --tag ${{ inputs.npm_tag }}
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
