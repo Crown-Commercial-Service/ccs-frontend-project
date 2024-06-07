@@ -1,7 +1,8 @@
+{% from "govuk/macros/attributes.njk" import govukAttributes %}
 {% from "../logo/macro.njk" import ccsLogo -%}
 
-<header class="ccs-header {{ params.classes if params.classes }}" role="banner" data-module="ccs-header"
-        {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+<header class="ccs-header {%- if params.classes %} {{ params.classes }}{% endif %}" data-module="ccs-header"
+  {{- govukAttributes(params.attributes) }}>
   {% if params.serviceAuthentication %}
     <div class="ccs-header__service-authentication">
       <div class="ccs-header__service-authentication-container {{ params.containerClasses | default('govuk-width-container') }}">
@@ -10,7 +11,8 @@
             {% if item.text or item.html %}
               <li class="ccs-header__service-authentication-item">
                 {% if item.href %}
-                  <a class="ccs-header__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+                  <a class="ccs-header__link" href="{{ item.href }}"
+                    {{- govukAttributes(item.attributes) }}>
                 {% endif %}
                   {{ item.html | safe if item.html else item.text }}
                 {% if item.href %}
@@ -37,15 +39,17 @@
       </a>
     {% endif %}
     {% if params.navigationPrimary or params.navigationSecondary %}
-    <nav aria-label="{{ params.navigationLabel | default('Menu') }}" class="ccs-header__navigation {{ 'ccs-header__navigation--no-service-name' if not params.serviceName }} {{ params.navigationClasses if params.navigationClasses }}">
-      <button type="button" class="ccs-header__menu-button ccs-js-header-toggle" aria-controls="navigation" aria-label="{{ params.menuButtonLabel | default('Show or hide menu') }}">Menu</button>
+    <nav aria-label="{{ params.navigationLabel | default('Menu') }}" class="ccs-header__navigation {{ 'ccs-header__navigation--no-service-name' if not params.serviceName }} {%- if params.navigationClasses %} {{ params.navigationClasses }}{% endif %}">
+      <button type="button" class="ccs-header__menu-button ccs-js-header-toggle" aria-controls="navigation" aria-label="{{ params.menuButtonLabel | default('Show or hide menu') }}" hidden>Menu</button>
       <div id="navigation" class="ccs-header__navigation-lists">
+        {% if params.navigationSecondary %}
         <ul id="navigation-secondary" class="ccs-header__navigation-secondary-list {{ 'ccs-header__navigation--no-second-list' if not params.navigationPrimary }}">
           {% for item in params.navigationSecondary %}
             {% if item.text or item.html %}
               <li class="ccs-header__navigation-item{{ ' ccs-header__navigation-item--active' if item.active }}">
                 {% if item.href %}
-                  <a class="ccs-header__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+                  <a class="ccs-header__link" href="{{ item.href }}"
+                    {{- govukAttributes(item.attributes) }}>
                 {% endif %}
                   {{ item.html | safe if item.html else item.text }}
                 {% if item.href %}
@@ -55,12 +59,15 @@
             {% endif %}
           {% endfor %}
         </ul>
+        {% endif %}
+        {% if params.navigationPrimary %}
         <ul id="navigation-primary" class="ccs-header__navigation-primary-list {{ 'ccs-header__navigation--no-second-list' if not params.navigationSecondary }}">
           {% for item in params.navigationPrimary %}
             {% if item.text or item.html %}
               <li class="ccs-header__navigation-item{{ ' ccs-header__navigation-item--active' if item.active }}">
                 {% if item.href %}
-                  <a class="ccs-header__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+                  <a class="ccs-header__link" href="{{ item.href }}"
+                    {{- govukAttributes(item.attributes) }}>
                 {% endif %}
                   {{ item.html | safe if item.html else item.text }}
                 {% if item.href %}
@@ -70,6 +77,7 @@
             {% endif %}
           {% endfor %}
         </ul>
+        {% endif %}
       </div>
     </nav>
     {% endif %}

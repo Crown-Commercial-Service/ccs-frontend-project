@@ -52,13 +52,18 @@ export const watch = (options) =>
      */
     task.name('lint:js watch', () =>
       gulp.watch(
-        '**/*.{cjs,js,mjs}',
+        '**/*.{cjs,js,mjs,ts}',
         { cwd: options.srcPath, ignored: ['**/*.test.*'] },
 
         // Run ESLint checks
-        npm.script('lint:js:cli', [
-          slash(join(options.workspace, '**/*.{cjs,js,mjs}'))
-        ])
+        gulp.parallel(
+          npm.script('lint:js:cli', [
+            slash(join(options.workspace, '**/*.{cjs,js,mjs}'))
+          ]),
+          npm.script('lint:ts:cli', [
+            slash(join(options.workspace, '**/*.ts'))
+          ])
+        )
       )
     ),
 
@@ -67,7 +72,7 @@ export const watch = (options) =>
      */
     task.name('compile:js watch', () =>
       gulp.watch(
-        '**/*.{cjs,js,mjs}',
+        '**/*.{cjs,js,mjs,ts}',
         { cwd: options.srcPath, ignored: ['**/*.test.*'] },
 
         // Run JavaScripts compile

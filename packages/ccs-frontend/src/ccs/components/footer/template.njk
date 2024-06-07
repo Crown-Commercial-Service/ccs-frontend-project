@@ -1,8 +1,9 @@
+{% from "govuk/macros/attributes.njk" import govukAttributes %}
 {% from "../logo/macro.njk" import ccsLogo -%}
 
-<footer class="ccs-footer {{ params.classes if params.classes }}" role="contentinfo"
-        {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
-  <div class="govuk-width-container {{ params.containerClasses if params.containerClasses }}">
+<footer class="ccs-footer {%- if params.classes %} {{ params.classes }}{% endif %}"
+  {{- govukAttributes(params.attributes) }}>
+  <div class="govuk-width-container {%- if params.containerClasses %} {{ params.containerClasses }}{% endif %}">
     {% if params.navigation | length %}
       <div class="ccs-footer__navigation">
         {% for nav in params.navigation %}
@@ -18,7 +19,8 @@
                 {% for item in nav.items %}
                   {% if item.href and item.text %}
                     <li class="ccs-footer__list-item">
-                      <a class="ccs-footer__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+                      <a class="ccs-footer__link" href="{{ item.href }}"
+                        {{- govukAttributes(item.attributes) }}>
                         {{ item.text }}
                       </a>
                     </li>
@@ -37,8 +39,7 @@
           {{ ccsLogo() }}
         </div>
         <div class="ccs-footer__copyright">
-          <a
-            class="ccs-footer__link"
+          <a class="ccs-footer__link"
             href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
           >© Crown copyright</a>
         </div>
@@ -50,7 +51,8 @@
             <ul class="ccs-footer__inline-list {{ 'ccs-footer__inline-list--bottom' if not params.meta.text and not params.meta.html}}">
               {% for item in params.meta.items %}
                 <li class="ccs-footer__inline-list-item">
-                  <a class="ccs-footer__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+                  <a class="ccs-footer__link" href="{{ item.href }}"
+                    {{- govukAttributes(item.attributes) }}>
                     {{ item.text }}
                   </a>
                 </li>

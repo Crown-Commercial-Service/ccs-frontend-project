@@ -13,7 +13,7 @@ import { scripts, styles } from './index.mjs'
  * During development, this task will:
  *
  * - lint and run `gulp styles` when `.scss` files change
- * - lint and run `gulp scripts` when `.{cjs,js,mjs}` files change
+ * - lint and run `gulp scripts` when `.{cjs,js,mjs,ts}` files change
  */
 export const watch = (options) =>
   gulp.parallel(

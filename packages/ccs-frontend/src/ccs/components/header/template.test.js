@@ -8,15 +8,6 @@ describe('Header', () => {
     examples = await getExamples('header')
   })
 
-  describe('default example', () => {
-    it('has a role of `banner`', () => {
-      const $ = render('header', examples.default)
-
-      const $component = $('.ccs-header')
-      expect($component.attr('role')).toEqual('banner')
-    })
-  })
-
   describe('custom options', () => {
     it('renders attributes correctly', () => {
       const $ = render('header', examples.attributes)
