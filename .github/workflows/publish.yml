@@ -1,0 +1,85 @@
+name: Publish new release to npm
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: publish
+
+jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+  
+  release:
+    needs: [test]
+
+    runs-on: ubuntu-latest
+
+    outputs:
+      npm: ${{ steps.package_version.outputs.npm }}
+
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Get package version
+        id: package_version
+        run: echo "npm=$(npm run version --silent --workspace ccs-frontend)" >> $GITHUB_OUTPUT
+
+      - name: Check if version tag already exists
+        id: version_tag
+        uses: mukunku/tag-exists-action@bdad1eaa119ce71b150b952c97351c75025c06a9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag: v${{ steps.package_version.outputs.npm }}
+
+      - name: Get Changelog Entry
+        if: ${{ steps.version_tag.outputs.exists == 'false' }}
+        id: changelog_reader
+        uses: mindsers/changelog-reader-action@v2
+        with:
+          validation_level: warn
+          version: ${{ steps.package_version.outputs.npm }}
+
+      - name: Create GitHub release
+        if: ${{ steps.version_tag.outputs.exists == 'false' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.package_version.outputs.npm }}
+          name: CCS Frontend  v${{ steps.package_version.outputs.npm }}
+          prerelease: ${{ contains(steps.package_version.outputs.npm, 'beta') }}
+          body: ${{ steps.changelog_reader.outputs.changes }}
+      
+  publish:
+    runs-on: ubuntu-latest
+    needs: [test, release]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
+      
+      - name: Install NPM dependencies
+        run: npm install
+
+      - name: Build the package
+        run: npm run build:package
+
+      - name: Publish package
+        run: npm publish --workspace ccs-frontend --tag $(${{ contains(needs.release.outputs.npm, 'beta') }} && next || latest)
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
