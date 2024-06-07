@@ -11,26 +11,23 @@ concurrency:
 jobs:
   test:
     uses: ./.github/workflows/test.yml
-  
-  release:
+
+  check_for_release:
     needs: [test]
 
     runs-on: ubuntu-latest
 
     outputs:
       npm: ${{ steps.package_version.outputs.npm }}
-
-    permissions:
-      id-token: write
-      contents: write
+      exists: ${{ steps.version_tag.outputs.exists }}
 
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          registry-url: 'https://registry.npmjs.org'
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Get package version
         id: package_version
@@ -44,35 +41,47 @@ jobs:
         with:
           tag: v${{ steps.package_version.outputs.npm }}
 
+  release:
+    if: ${{ needs.check_for_release.outputs.exists == 'false' }}
+    needs: [test, check_for_release]
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
       - name: Get Changelog Entry
-        if: ${{ steps.version_tag.outputs.exists == 'false' }}
         id: changelog_reader
         uses: mindsers/changelog-reader-action@v2
         with:
           validation_level: warn
-          version: ${{ steps.package_version.outputs.npm }}
+          version: ${{ needs.check_for_release.outputs.npm }}
 
       - name: Create GitHub release
-        if: ${{ steps.version_tag.outputs.exists == 'false' }}
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ steps.package_version.outputs.npm }}
-          name: CCS Frontend  v${{ steps.package_version.outputs.npm }}
-          prerelease: ${{ contains(steps.package_version.outputs.npm, 'beta') }}
+          tag_name: v${{ needs.check_for_release.outputs.npm }}
+          name: CCS Frontend  v${{ needs.check_for_release.outputs.npm }}
+          prerelease: ${{ contains(needs.check_for_release.outputs.npm, 'beta') }}
           body: ${{ steps.changelog_reader.outputs.changes }}
-      
+
   publish:
+    if: ${{ steps.version_tag.outputs.exists == 'false' }}
     runs-on: ubuntu-latest
-    needs: [test, release]
+    needs: [test, check_for_release, release]
 
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          registry-url: 'https://registry.npmjs.org'
-      
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
+
       - name: Install NPM dependencies
         run: npm install
 
@@ -80,6 +89,6 @@ jobs:
         run: npm run build:package
 
       - name: Publish package
-        run: npm publish --workspace ccs-frontend --tag $(${{ contains(needs.release.outputs.npm, 'beta') }} && next || latest)
+        run: npm publish --workspace ccs-frontend --tag $(${{ contains(needs.release.outputs.npm, 'beta') }} && "next" || "latest")
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
