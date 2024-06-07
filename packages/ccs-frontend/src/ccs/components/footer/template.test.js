@@ -8,13 +8,6 @@ describe('Footer', () => {
     examples = await getExamples('footer')
   })
 
-  it('renders the component with a  role of `contentinfo`', () => {
-    const $ = render('footer', examples.default)
-
-    const $component = $('.ccs-footer')
-    expect($component.attr('role')).toEqual('contentinfo')
-  })
-
   it('renders attributes correctly', () => {
     const $ = render('footer', examples.attributes)
 

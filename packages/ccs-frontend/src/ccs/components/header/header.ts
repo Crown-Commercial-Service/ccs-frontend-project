@@ -13,6 +13,7 @@ class Header implements CCSFrontendComponent {
   init () {
     this.syncState(this.$menu.hasClass('ccs-header__navigation-lists--open'))
     this.setEventListeners()
+    this.$menuButton.removeAttr('hidden')
   }
 
   syncState (isVisible: boolean) {
