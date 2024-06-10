@@ -62,7 +62,7 @@
     "@ccs-frontend/lib": "*",
     "@ccs-frontend/tasks": "*",
     "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-replace": "^5.0.5",
+    "@rollup/plugin-replace": "^5.0.7",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/jquery": "^3.5.30",
