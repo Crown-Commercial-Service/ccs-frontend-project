@@ -57,7 +57,7 @@
     "version": "echo $npm_package_version"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.24.6",
+    "@babel/preset-env": "^7.24.7",
     "@ccs-frontend/config": "*",
     "@ccs-frontend/lib": "*",
     "@ccs-frontend/tasks": "*",
