@@ -6,6 +6,6 @@
 /**
  * CCS Frontend release version
  *
- * {@link https://github.com/tim-s-ccs/ccs-frontend-project/releases}
+ * {@link https://github.com/Crown-Commercial-Service/ccs-frontend-project/releases}
  */
 export const version = 'development'

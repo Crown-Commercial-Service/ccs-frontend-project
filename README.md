@@ -1,7 +1,7 @@
 # Crown Commercial Service (CCS) Frontend Project
 
-[![Build Status](https://github.com/tim-s-ccs/ccs-frontend-project/workflows/Tests/badge.svg)](https://github.com/tim-s-ccs/ccs-frontend-project/actions?query=workflow%3ATests+branch%3Amain)
-[![Known Vulnerabilities](https://snyk.io/test/github/tim-s-ccs/ccs-frontend-project/badge.svg?targetFile=package.json)](https://snyk.io/test/github/tim-s-ccs/ccs-frontend-project/badge.svg?targetFile=package.json)
+[![Build Status](https://github.com/Crown-Commercial-Service/ccs-frontend-project/workflows/Tests/badge.svg)](https://github.com/Crown-Commercial-Service/ccs-frontend-project/actions?query=workflow%3ATests+branch%3Amain)
+[![Known Vulnerabilities](https://snyk.io/test/github/Crown-Commercial-Service/ccs-frontend-project/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Crown-Commercial-Service/ccs-frontend-project/badge.svg?targetFile=package.json)
 =====================
 
 Crown Commercial Service (CCS) Frontend contains the code you need to start building a user interface for CCS platforms and services.

@@ -30,12 +30,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tim-s-ccs/ccs-frontend-project.git"
+    "url": "https://github.com/Crown-Commercial-Service/ccs-frontend-project.git"
   },
   "bugs": {
-    "url": "https://github.com/tim-s-ccs/ccs-frontend-project"
+    "url": "https://github.com/Crown-Commercial-Service/ccs-frontend-project"
   },
-  "homepage": "https://github.com/tim-s-ccs/ccs-frontend-project#readme",
+  "homepage": "https://github.com/Crown-Commercial-Service/ccs-frontend-project#readme",
   "keywords": [
     "crown commercial service",
     "ccs",

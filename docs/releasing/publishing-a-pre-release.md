@@ -124,7 +124,7 @@ Developers should pair on pre-releases. When working remotely, it can be useful 
 
 To create a new GitHub release, do the following:
 
-1. Select the tag corresponding to the release in [the list of tags on GitHub](https://github.com/tim-s-ccs/ccs-frontend-project/tags)
+1. Select the tag corresponding to the release in [the list of tags on GitHub](https://github.com/Crown-Commercial-Service/ccs-frontend-project/tags)
 2. Press **Create release from tag**
 3. Set 'CCS Frontend v[version]' as the title
 4. Add release notes from [`CHANGELOG.md`](/CHANGELOG.md)
