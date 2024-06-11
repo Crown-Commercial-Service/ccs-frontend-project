@@ -2,7 +2,7 @@
 
 GitHub Actions lints Sass and JavaScript, runs unit and functional tests with Node.js.
 
-See the [GitHub Actions **Tests** workflow](https://github.com/tim-s-ccs/ccs-frontend-project/actions/workflows/tests.yml) for more information.
+See the [GitHub Actions **Tests** workflow](https://github.com/Crown-Commercial-Service/ccs-frontend-project/actions/workflows/tests.yml) for more information.
 
 ## Testing terminology
 

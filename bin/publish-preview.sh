@@ -55,4 +55,4 @@ git checkout -
 BRANCH_COMMIT_SHA=$(git rev-parse --short $BRANCH_NAME)
 
 echo
-echo "✅ Success! To install the pushed branch release, run 'npm install --save \"tim-s-ccs/ccs-frontend-project#$BRANCH_COMMIT_SHA\"'"
+echo "✅ Success! To install the pushed branch release, run 'npm install --save \"Crown-Commercial-Service/ccs-frontend-project#$BRANCH_COMMIT_SHA\"'"
