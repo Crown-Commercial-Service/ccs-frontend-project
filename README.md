@@ -1,6 +1,6 @@
 # Crown Commercial Service (CCS) Frontend Project
 
-[![Build Status](https://github.com/Crown-Commercial-Service/ccs-frontend-project/workflows/Tests/badge.svg)](https://github.com/Crown-Commercial-Service/ccs-frontend-project/actions?query=workflow%3ATests+branch%3Amain)
+[![Publish new release to npm](https://github.com/Crown-Commercial-Service/ccs-frontend-project/actions/workflows/publish.yml/badge.svg)](https://github.com/Crown-Commercial-Service/ccs-frontend-project/actions/workflows/publish.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/Crown-Commercial-Service/ccs-frontend-project/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Crown-Commercial-Service/ccs-frontend-project/badge.svg?targetFile=package.json)
 =====================
 
