@@ -70,7 +70,7 @@
     "cssnano": "^7.0.1",
     "cssnano-preset-default": "^7.0.1",
     "del-cli": "^5.1.0",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "postcss": "^8.4.36",
     "postcss-scss": "^4.0.9",
     "puppeteer": "^22.11.1",
