@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- The following CCS helpers have been added:
+  - Contact us
+
 ## [1.0.0] - 2024-06-07
 
 ### Added

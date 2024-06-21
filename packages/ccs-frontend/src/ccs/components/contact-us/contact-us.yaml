@@ -1,0 +1,68 @@
+params:
+  - name: havingProblemsText
+    type: string
+    required: false
+    description: Having problem text, defaults to "Having problems with this service?"
+  - name: contactUsLink
+    type: object
+    required: true
+    description: Contact us link options
+    params:
+      - name: text
+        type: string
+        required: false
+        description: Contact us link text, defaults to "Contact us (opens in a new tab)"
+      - name: href
+        type: string
+        required: true
+        description: Contact us link
+  - name: contactUsText
+    type: string
+    required: false
+    description: Contact use text, defaults to "for support."
+  - name: classes
+    type: string
+    required: false
+    description: Classes to add to contact us component.
+  - name: attributes
+    type: object
+    required: false
+    description: HTML attributes (for example data attributes) to add to the contact us component.
+
+previewLayout: full-width
+
+examples:
+  - name: default
+    options:
+      contactUsLink:
+        href: '/contact-us'
+  
+  - name: with custom text
+    options:
+      havingProblemsText: Are you having problems?
+      contactUsLink:
+        href: '/contact-us-now'
+        text: 'Go on, contact us (opens in new tab)'
+      contactUsText: you know you want to.
+    
+  - name: with no contact us text
+    options:
+      contactUsText: ""
+
+
+  # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
+  - name: attributes
+    hidden: true
+    options:
+      contactUsLink:
+        href: '/contact-us'
+      attributes:
+        data-test-attribute: value
+        data-test-attribute-2: value-2
+
+  - name: classes
+    hidden: true
+    options:
+      contactUsLink:
+        href: '/contact-us'
+      classes: app-contact-us--custom-modifier
