@@ -67,6 +67,6 @@
     "typescript-eslint": "^7.13.0"
   },
   "optionalDependencies": {
-    "puppeteer": "^22.11.1"
+    "puppeteer": "^22.12.0"
   }
 }
