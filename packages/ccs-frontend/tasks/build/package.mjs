@@ -1,7 +1,7 @@
 import { npm } from '@ccs-frontend/tasks'
 import gulp from 'gulp'
 
-import { assets, fixtures, scripts, styles, templates } from '../index.mjs'
+import { assets, declarations, fixtures, scripts, styles, templates } from '../index.mjs'
 
 /**
  * Build package task
@@ -13,6 +13,7 @@ export default (options) =>
     assets(options),
     fixtures(options),
     scripts(options),
+    declarations(options),
     styles(options),
     templates(options),
   )

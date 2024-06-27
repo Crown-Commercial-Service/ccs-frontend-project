@@ -4,6 +4,7 @@ import * as build from './tasks/build/index.mjs'
 import { options, targets } from './tasks/build/options.mjs'
 import {
   assets,
+  declarations,
   fixtures,
   scripts,
   styles,
@@ -22,6 +23,7 @@ gulp.task('dev', build.dev(options))
  * Utility tasks
  */
 gulp.task('assets', assets(options))
+gulp.task('declarations', declarations(options))
 gulp.task('fixtures', fixtures(options))
 gulp.task('scripts', scripts(options))
 gulp.task('styles', styles(options))
