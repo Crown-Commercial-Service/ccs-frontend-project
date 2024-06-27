@@ -59,7 +59,7 @@ describe('packages/ccs-frontend/dist/', () => {
       '!**/*.test.*',
       '!**/__snapshots__/',
       '!**/__snapshots__/**',
-      '!**/tsconfig?(.build).json',
+      '!**/tsconfig?(.declarations).json',
       '!**/ccs-frontend-component.*',
       '!README.md'
     ]
@@ -72,7 +72,9 @@ describe('packages/ccs-frontend/dist/', () => {
       .flatMap(
         mapPathTo(['**/*.ts'], ({ dir: requirePath, name }) => [
           join(requirePath, `${name}.mjs`),
-          join(requirePath, `${name}.mjs.map`) // with source map
+          join(requirePath, `${name}.mjs.map`), // with source map
+          join(requirePath.replace('ccs', 'ccs/@types'), `${name}.d.ts`), // with type declaration
+          join(requirePath.replace('ccs', 'ccs/@types'), `${name}.d.ts.map`) // with type declaration source map
         ])
       )
 
@@ -101,7 +103,11 @@ describe('packages/ccs-frontend/dist/', () => {
 
           // ES module bundles for browsers, minified
           join(requirePath, 'ccs-frontend.min.js'), // avoid .mjs extension MIME issues
-          join(requirePath, 'ccs-frontend.min.js.map') // with source map
+          join(requirePath, 'ccs-frontend.min.js.map'), // with source map
+
+          // Type declaraions for ccs-frontend-component
+          join(requirePath.replace('ccs', 'ccs/@types'), 'ccs-frontend-component.d.ts'), // with type declaration
+          join(requirePath.replace('ccs', 'ccs/@types'), 'ccs-frontend-component.d.ts.map') // with type declaration source map
         ])
       )
 
@@ -153,6 +159,7 @@ describe('packages/ccs-frontend/dist/', () => {
       'postcss.config.unit.test.mjs',
       'rollup.publish.config.mjs',
       'rollup.release.config.mjs',
+      'tsconfig.declarations.json',
       'tsconfig.json'
     ])
   })

@@ -3,6 +3,7 @@
   "description": "CCS Frontend contains assets and components used in CCS projects",
   "version": "1.0.0",
   "main": "dist/ccs/all.bundle.js",
+  "types": "dist/ccs/@types/all.d.ts",
   "module": "dist/ccs/all.mjs",
   "sass": "dist/ccs/all.scss",
   "files": [
@@ -14,6 +15,7 @@
     ".": {
       "sass": "./dist/ccs/all.scss",
       "import": "./dist/ccs/all.mjs",
+      "types": "./dist/ccs/@types/all.d.ts",
       "require": "./dist/ccs/all.bundle.js",
       "default": "./dist/ccs/all.bundle.js"
     },
@@ -51,9 +53,11 @@
     "build": "npm run build:package",
     "build:package": "gulp build:package --color",
     "build:release": "gulp build:release --color",
+    "build:types": "tsc",
     "clean": "npm run clean:package",
     "clean:package": "del-cli dist",
     "clean:release": "del-cli ../../dist --force",
+    "clean:tmp": "del-cli dist/tmp",
     "version": "echo $npm_package_version"
   },
   "devDependencies": {
@@ -71,6 +75,7 @@
     "cssnano-preset-default": "^7.0.1",
     "del-cli": "^5.1.0",
     "gulp": "^5.0.0",
+    "gulp-replace": "^1.1.4",
     "postcss": "^8.4.36",
     "postcss-scss": "^4.0.9",
     "puppeteer": "^22.12.1",
