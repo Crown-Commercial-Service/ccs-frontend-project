@@ -7,6 +7,13 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
+    ignores: [
+      'dist/*',
+      'packages/ccs-frontend/dist/*',
+      'packages/ccs-frontend-review/dist/*',
+    ]
+  },
+  {
     plugins: {
       '@stylistic/js': stylisticJs,
       '@stylistic/ts': stylisticTs
