@@ -10,7 +10,8 @@ export const assets = (options) =>
       gulp
         .src('ccs/assets/**/*', {
           base: options.srcPath,
-          cwd: options.srcPath
+          cwd: options.srcPath,
+          encoding: false
         })
         .pipe(gulp.dest(options.destPath))
     )
