@@ -17,7 +17,8 @@ export default (options) =>
       gulp
         .src('ccs/assets/**/*', {
           base: join(options.srcPath, 'ccs'),
-          cwd: options.srcPath
+          cwd: options.srcPath,
+          encoding: false
         })
         .pipe(gulp.dest(options.destPath))
     ),
