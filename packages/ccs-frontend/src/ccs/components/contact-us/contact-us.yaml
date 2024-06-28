@@ -47,6 +47,8 @@ examples:
     
   - name: with no contact us text
     options:
+      contactUsLink:
+        href: '/contact-us-now'
       contactUsText: ""
 
 
