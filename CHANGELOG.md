@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The following CCS helpers have been added:
   - Contact us
+  - Password Strength
 
 - Add a type declaration files
 

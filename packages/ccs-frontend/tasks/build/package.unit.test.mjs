@@ -184,6 +184,7 @@ describe('packages/ccs-frontend/dist/', () => {
         // Look for ES import for each component
         expect(contents).toContain(outdent`
           export { Header } from './components/header/header.mjs';
+          export { PasswordStrength } from './components/password-strength/password-strength.mjs';
           export { createAll, initAll } from './init.mjs';
         `)
       })

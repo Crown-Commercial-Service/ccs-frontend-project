@@ -6,6 +6,7 @@ title: Create a Print Marketplace buyer account
 
 {% from "ccs/components/header/macro.njk" import ccsHeader %}
 {% from "ccs/components/footer/macro.njk" import ccsFooter %}
+{% from "ccs/components/password-strength/macro.njk" import ccsPasswordStrength %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 {% from "govuk/components/password-input/macro.njk" import govukPasswordInput %}
@@ -91,17 +92,28 @@ title: Create a Print Marketplace buyer account
         }
       }) %}
         <p class="govuk-body govuk-!-margin-bottom-1">Your password must have:</p>
-        <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-2 govuk-!-margin-bottom-6">
-          <li>
-            at least 10 characters
-          </li>
-          <li>
-            at least one capital letter
-          </li>
-          <li>
-            at least one number
-          </li>
-        </ul>
+        {{ ccsPasswordStrength({
+          passwordId: "password",
+          tests: [
+            {
+              type: 'length',
+              value: 10
+            },
+            {
+              type: 'symbol',
+              value: "=+\\-^$*.[\\]{}()?\"!@#%&/\\\\,><':;|_~`"
+            },
+            {
+              type: 'number'
+            },
+            {
+              type: 'uppercase'
+            },
+            {
+              type: 'lowercase'
+            }
+          ]
+        }) }}
 
         {{ govukPasswordInput({
           label: {
