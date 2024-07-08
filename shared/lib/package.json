@@ -15,7 +15,7 @@
   "dependencies": {
     "@ccs-frontend/config": "*",
     "filesize": "^10.1.1",
-    "glob": "^10.4.2",
+    "glob": "^10.4.3",
     "js-yaml": "^4.1.0",
     "minimatch": "^9.0.5",
     "nunjucks": "^3.2.4",
