@@ -63,7 +63,7 @@
     "stylelint": "^16.7.0",
     "stylelint-config-gds": "^2.0.0",
     "stylelint-order": "^6.0.4",
-    "typescript": "^5.5.3",
+    "typescript": "^5.5.4",
     "typescript-eslint": "^7.16.1"
   },
   "optionalDependencies": {
