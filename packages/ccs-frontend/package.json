@@ -1,7 +1,7 @@
 {
   "name": "ccs-frontend",
   "description": "CCS Frontend contains assets and components used in CCS projects",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "dist/ccs/all.bundle.js",
   "types": "dist/ccs/@types/all.d.ts",
   "module": "dist/ccs/all.mjs",
@@ -82,7 +82,7 @@
     "typescript": "^5.5.4"
   },
   "peerDependencies": {
-    "govuk-frontend": "^5.4.1",
+    "govuk-frontend": "^5.5.0",
     "jquery": "^3.x"
   }
 }
