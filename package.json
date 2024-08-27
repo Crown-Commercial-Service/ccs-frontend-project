@@ -64,7 +64,7 @@
     "stylelint-config-gds": "^2.0.0",
     "stylelint-order": "^6.0.4",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.1.0"
+    "typescript-eslint": "^8.2.0"
   },
   "optionalDependencies": {
     "puppeteer": "^22.15.0"
