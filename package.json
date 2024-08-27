@@ -47,7 +47,7 @@
     "@ccs-frontend/helpers": "*",
     "@ccs-frontend/lib": "*",
     "@ccs-frontend/tasks": "*",
-    "@eslint/js": "^9.9.0",
+    "@eslint/js": "^9.9.1",
     "@stylistic/eslint-plugin-js": "^2.6.4",
     "@stylistic/eslint-plugin-ts": "^2.6.4",
     "concurrently": "^8.2.2",
