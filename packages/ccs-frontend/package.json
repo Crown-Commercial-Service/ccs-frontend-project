@@ -68,7 +68,7 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-replace": "^5.0.7",
     "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.6",
+    "@rollup/plugin-typescript": "^12.1.0",
     "@types/jquery": "^3.5.30",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
