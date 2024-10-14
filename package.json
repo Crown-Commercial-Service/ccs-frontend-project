@@ -60,7 +60,7 @@
     "jest-regex-util": "^29.4.3",
     "jest-serializer-html": "^7.1.0",
     "postcss-markdown": "^1.2.0",
-    "stylelint": "^16.9.0",
+    "stylelint": "^16.10.0",
     "stylelint-config-gds": "^2.0.0",
     "stylelint-order": "^6.0.4",
     "typescript": "^5.6.3",
