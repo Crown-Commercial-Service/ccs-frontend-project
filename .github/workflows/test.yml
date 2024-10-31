@@ -183,8 +183,8 @@ jobs:
 
       matrix:
         node-version:
-          - 18
           - 20
+          - 22
 
         conditions:
           - require
