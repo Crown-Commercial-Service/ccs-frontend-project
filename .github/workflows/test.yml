@@ -8,7 +8,7 @@ on:
 jobs:
   install:
     name: Install
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     env:
       PUPPETEER_SKIP_DOWNLOAD: true
@@ -22,7 +22,7 @@ jobs:
 
   build:
     name: Build
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs: [install]
 
     steps:
@@ -36,8 +36,8 @@ jobs:
         uses: ./.github/workflows/actions/build
 
   lint:
-    name: ${{ matrix.task.description }} (ubuntu-22.04)
-    runs-on: ubuntu-22.04
+    name: ${{ matrix.task.description }} (ubuntu-latest)
+    runs-on: ubuntu-latest
     needs: [install]
 
     strategy:
@@ -80,8 +80,8 @@ jobs:
         run: ${{ matrix.task.run }}
 
   test:
-    name: ${{ matrix.task.description }} (ubuntu-22.04)
-    runs-on: ubuntu-22.04
+    name: ${{ matrix.task.description }} (ubuntu-latest)
+    runs-on: ubuntu-latest
     needs: [install, build]
 
     strategy:
@@ -143,8 +143,8 @@ jobs:
         run: npx jest --color ${{ format('--maxWorkers=2 --selectProjects "{0}"', join(matrix.task.projects, '", "')) }}
 
   verify:
-    name: ${{ matrix.task.description }} (ubuntu-22.04)
-    runs-on: ubuntu-22.04
+    name: ${{ matrix.task.description }} (ubuntu-latest)
+    runs-on: ubuntu-latest
     needs: [install, build]
 
     strategy:
@@ -175,7 +175,7 @@ jobs:
 
   package:
     name: Export ${{ matrix.conditions }}, Node.js ${{ matrix.node-version }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs: [install, build]
 
     strategy:
