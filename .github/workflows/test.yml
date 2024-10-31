@@ -12,6 +12,7 @@ jobs:
 
     env:
       PUPPETEER_SKIP_DOWNLOAD: true
+      CHROME_DEVEL_SANDBOX: /opt/google/chrome/chrome-sandbox
 
     steps:
       - name: Checkout code
