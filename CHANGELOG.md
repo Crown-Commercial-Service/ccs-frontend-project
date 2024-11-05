@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Update to use NodeJS LTS Jod (v22)
+
 ## [1.1.3] - 2024-09-02
 
 ### Changed

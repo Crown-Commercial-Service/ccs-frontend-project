@@ -10,6 +10,7 @@ export default [
         ...globals.browser,
         ...globals.node,
         ...globals.jquery,
+        ...globals.builtin,
         page: true
       }
     }

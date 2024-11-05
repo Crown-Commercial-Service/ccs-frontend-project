@@ -4,8 +4,8 @@
   "description": "CCS Frontend review app",
   "main": "src/start.mjs",
   "engines": {
-    "node": "^20.9.0",
-    "npm": "^10.1.0"
+    "node": "^22.11.0",
+    "npm": "^10.9.0"
   },
   "license": "MIT",
   "scripts": {
