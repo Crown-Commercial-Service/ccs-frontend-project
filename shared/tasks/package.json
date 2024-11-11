@@ -18,6 +18,6 @@
     "postcss-load-config": "^6.0.1",
     "rollup": "^4.25.0",
     "sass-embedded": "^1.80.6",
-    "slug": "^9.1.0"
+    "slug": "^10.0.0"
   }
 }
