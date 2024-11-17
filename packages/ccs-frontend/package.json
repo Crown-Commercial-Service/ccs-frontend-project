@@ -78,7 +78,7 @@
     "gulp-replace": "^1.1.4",
     "postcss": "^8.4.47",
     "postcss-scss": "^4.0.9",
-    "puppeteer": "^23.7.1",
+    "puppeteer": "^23.8.0",
     "typescript": "^5.6.3"
   },
   "peerDependencies": {
