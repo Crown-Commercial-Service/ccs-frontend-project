@@ -22,6 +22,7 @@ dist/
 *.zip
 *.idea
 .snyk
+.vscode/
 
 # Project lockfile only
 package-lock.json

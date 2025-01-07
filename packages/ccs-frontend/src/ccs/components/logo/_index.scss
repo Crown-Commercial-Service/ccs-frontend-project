@@ -25,6 +25,19 @@
     vertical-align: bottom;
   }
 
+  .ccs-logo__text-graphic {
+    fill: inherit;
+    font-family: HelveticaNeue, arial, sans-serif;
+    font-size: 49px;
+    font-variant: normal;
+    font-weight: normal;
+    -inkscape-font-specification: helveticaneue;
+    writing-mode: lr-tb;
+    fill-opacity: 1;
+    fill-rule: nonzero;
+    stroke: none
+  }
+
   @include govuk-media-query($media-type: print) {
     // Hide the inverted crown when printing in browsers that don't support SVG.
     .ccs-logo__fallback-image {
