@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [1.3.2] - 2025-01-08
+
 ### Changed
 
 - Fix the formatting of the CCS logo HTML
