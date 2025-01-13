@@ -24,7 +24,7 @@
     "ccs-frontend": "*",
     "cookie-parser": "^1.4.7",
     "express": "^4.21.2",
-    "express-validator": "^7.2.0",
+    "express-validator": "^7.2.1",
     "front-matter": "^4.0.2",
     "govuk-frontend": "^5.8.0",
     "highlight.js": "^11.11.1",
