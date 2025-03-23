@@ -20,7 +20,7 @@
   "dependencies": {
     "@ccs-frontend/config": "*",
     "@ccs-frontend/lib": "*",
-    "@prettier/sync": "^0.5.1",
+    "@prettier/sync": "^0.5.4",
     "ccs-frontend": "*",
     "cookie-parser": "^1.4.7",
     "express": "^4.21.2",
