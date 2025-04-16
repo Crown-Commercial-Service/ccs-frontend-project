@@ -51,7 +51,7 @@
       padding: govuk-spacing(1) 0;
     }
 
-    a {
+    a, button {
       @include govuk-font($size: 16, $weight: bold);
     }
   }
@@ -61,7 +61,19 @@
     border-bottom: 0;
   }
 
-  .ccs-header__link {
+  .ccs-header__button_as_link {
+    display: inline;
+    padding: 0;
+    border: 0;
+    color: currentcolor;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+  }
+
+  .ccs-header__link, .ccs-header__button_as_link {
     // Avoid using the `govuk-link-common` mixin because the links in the header
     // get a special treatment, because:
     //
@@ -251,7 +263,7 @@
 
   .ccs-header__navigation-secondary-list {
     .ccs-header__navigation-item {
-      a {
+      a, button {
         @include govuk-font($size: 16, $weight: regular);
       }
     }
@@ -268,13 +280,20 @@
       border: 0;
     }
 
-    a {
+    a, button {
       @include govuk-font($size: 16, $weight: bold);
       white-space: nowrap;
     }
   }
 
   .ccs-header__navigation-item--active {
+    button {
+      // color: $ccs-header-link-active;
+      border-color: $ccs-header-link-active-border-color;
+      color: inherit;
+      background-color: transparent;
+    }
+
     a {
       &:link,
       &:hover,
@@ -284,7 +303,9 @@
         color: inherit;
         background-color: transparent;
       }
+    }
 
+    a, button {
       // When focussed, the text colour needs to be darker to ensure that colour
       // contrast is still acceptable
       &:focus {

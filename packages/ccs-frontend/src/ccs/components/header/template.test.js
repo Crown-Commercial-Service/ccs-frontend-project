@@ -232,4 +232,107 @@ describe('Header', () => {
       expect($firstAuthenticationItem.text()).toContain('Register')
     })
   })
+
+  describe('when the link is a button', () => {
+    it('renders the service authentication as a button', () => {
+      const $ = render('header', examples['with authentication options with other http methods'])
+
+      const $component = $('.ccs-header')
+      const $authenticationSection = $component.find('div.ccs-header__service-authentication')
+
+      const $authenticationList = $authenticationSection.find('ul.ccs-header__service-authentication-list')
+
+      const $authenticationItems = $authenticationList.find('li.ccs-header__service-authentication-item > form').map((_, element) => $(element))
+
+      expect($authenticationItems.length).toEqual(2)
+
+      const $firstAuthenticationItem = $authenticationItems.get(0)
+      const $secondAuthenticationItem = $authenticationItems.get(1)
+
+      expect($firstAuthenticationItem.attr('method')).toEqual('post')
+      expect($firstAuthenticationItem.attr('action')).toEqual('#1')
+
+      expect($secondAuthenticationItem.attr('method')).toEqual('post')
+      expect($secondAuthenticationItem.attr('action')).toEqual('#2')
+
+      const $firstAuthenticationItemButton = $firstAuthenticationItem.find('button.ccs-header__button_as_link')
+      const $secondAuthenticationItemInput = $secondAuthenticationItem.find('input')
+      const $secondAuthenticationItemButton = $secondAuthenticationItem.find('button.ccs-header__button_as_link')
+
+      expect($firstAuthenticationItemButton.text()).toContain('Item 1')
+      
+      expect($secondAuthenticationItemInput.attr('value')).toContain('delete')
+      expect($secondAuthenticationItemButton.text()).toContain('Sign in')
+    })
+
+    it('renders the secondary navigation as a button', () => {
+      const $ = render('header', examples['with authentication options with other http methods'])
+
+      const $component = $('.ccs-header')
+
+      const $secondaryNavigationFormItems = $component.find('#navigation-secondary > li.ccs-header__navigation-item > form').map((_, element) => $(element))
+      const $secondaryNavigationLinkItems = $component.find('#navigation-secondary > li.ccs-header__navigation-item > a').map((_, element) => $(element))
+
+      expect($secondaryNavigationFormItems.length).toEqual(2)
+      expect($secondaryNavigationLinkItems.length).toEqual(1)
+
+      const $firstNavItem = $secondaryNavigationFormItems.get(0)
+      const $secondNavItem = $secondaryNavigationFormItems.get(1)
+      const $thridNavItem = $secondaryNavigationLinkItems.get(0)
+
+      expect($firstNavItem.attr('method')).toEqual('post')
+      expect($firstNavItem.attr('action')).toEqual('#1')
+
+      expect($secondNavItem.attr('method')).toEqual('post')
+      expect($secondNavItem.attr('action')).toEqual('#2')
+
+      const $firstNavItemInput = $firstNavItem.find('input')
+      const $firstNavItemButton = $firstNavItem.find('button.ccs-header__button_as_link')
+      const $secondNavItemInput = $secondNavItem.find('input')
+      const $secondNavItemButton = $secondNavItem.find('button.ccs-header__button_as_link')
+
+      expect($firstNavItemInput.attr('value')).toContain('put')
+      expect($firstNavItemButton.text()).toContain('Navigation secondary item 1')
+      
+      expect($secondNavItemInput.attr('value')).toContain('delete')
+      expect($secondNavItemButton.text()).toContain('Navigation secondary item 2')
+
+      expect($thridNavItem.attr('href')).toEqual('#3')
+      expect($thridNavItem.text()).toContain('Navigation secondary item 3')
+    })
+
+    it('renders the primary navigation as a button', () => {
+      const $ = render('header', examples['with authentication options with other http methods'])
+
+      const $component = $('.ccs-header')
+
+      const $primaryNavigationFormItems = $component.find('#navigation-primary > li.ccs-header__navigation-item > form').map((_, element) => $(element))
+      const $primaryNavigationLinkItems = $component.find('#navigation-primary > li.ccs-header__navigation-item > a').map((_, element) => $(element))
+
+      expect($primaryNavigationFormItems.length).toEqual(2)
+      expect($primaryNavigationLinkItems.length).toEqual(1)
+      
+      const $firstNavItem = $primaryNavigationFormItems.get(0)
+      const $secondNavItem = $primaryNavigationFormItems.get(1)
+      const $thridNavItem = $primaryNavigationLinkItems.get(0)
+      
+      expect($firstNavItem.attr('method')).toEqual('post')
+      expect($firstNavItem.attr('action')).toEqual('#1')
+
+      expect($secondNavItem.attr('method')).toEqual('post')
+      expect($secondNavItem.attr('action')).toEqual('#2')
+
+      const $firstNavItemButton = $firstNavItem.find('button.ccs-header__button_as_link')
+      const $secondNavItemInput = $secondNavItem.find('input')
+      const $secondNavItemButton = $secondNavItem.find('button.ccs-header__button_as_link')
+
+      expect($firstNavItemButton.text()).toContain('Navigation primary item 1')
+
+      expect($secondNavItemInput.attr('value')).toContain('patch')
+      expect($secondNavItemButton.text()).toContain('Navigation primary item 2')
+
+      expect($thridNavItem.attr('href')).toEqual('#3')
+      expect($thridNavItem.text()).toContain('Navigation primary item 3')
+    })
+  })
 })

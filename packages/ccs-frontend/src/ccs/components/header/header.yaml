@@ -32,6 +32,10 @@ params:
         type: string
         required: false
         description: URL of the authentication item anchor.
+      - name: method
+        type: string
+        required: false
+        description: The HTTP method to use instead of a link
       - name: attributes
         type: object
         required: false
@@ -53,6 +57,10 @@ params:
         type: string
         required: false
         description: URL of the navigation item anchor.
+      - name: method
+        type: string
+        required: false
+        description: The HTTP method to use instead of a link
       - name: active
         type: boolean
         required: false
@@ -78,6 +86,10 @@ params:
         type: string
         required: false
         description: URL of the navigation item anchor.
+      - name: method
+        type: string
+        required: false
+        description: The HTTP method to use instead of a link
       - name: active
         type: boolean
         required: false
@@ -151,6 +163,15 @@ examples:
           text: Register
         - href: "#2"
           text: Sign in
+
+  - name: with authentication options for sign out
+    options:
+      serviceAuthentication:
+        - href: "#1"
+          text: Register
+        - href: "#2"
+          text: Sign out
+          method: delete
 
   - name: with both navigation
     options:
@@ -409,3 +430,33 @@ examples:
           active: true
         - html: <em>Navigation item 2</em>
         - html: <em>Navigation item 3</em>
+
+  - name: with authentication options with other http methods
+    hidden: true
+    options:
+      serviceAuthentication:
+        - href: "#1"
+          text: Item 1
+          method: post
+        - href: "#2"
+          text: Sign in
+          method: delete
+      navigationPrimary:
+        - href: "#1"
+          text: Navigation primary item 1
+          active: true
+          method: post
+        - href: "#2"
+          text: Navigation primary item 2
+          method: patch
+        - href: "#3"
+          text: Navigation primary item 3
+      navigationSecondary:
+        - href: "#1"
+          text: Navigation secondary item 1
+          method: put
+        - href: "#2"
+          text: Navigation secondary item 2
+          method: delete
+        - href: "#3"
+          text: Navigation secondary item 3
