@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [1.4.0] - 2025-04-17
+
 ## Added
 
 - For Rails 7.2 we need to allow delete links to be buttons in the header so the header has been updated to accept a HTTP method and render a button in a form
