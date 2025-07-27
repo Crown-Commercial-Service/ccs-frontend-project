@@ -17,7 +17,7 @@
     "@axe-core/puppeteer": "^4.10.1",
     "@ccs-frontend/config": "*",
     "@ccs-frontend/lib": "*",
-    "cheerio": "^1.1.0",
+    "cheerio": "^1.1.2",
     "ccs-frontend": "*",
     "jest-axe": "^9.0.0",
     "jest-dev-server": "^11.0.0",
