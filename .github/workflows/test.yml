@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v5
 
       - name: Install dependencies
         uses: ./.github/workflows/actions/install-node
@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v5
 
       - name: Restore dependencies
         uses: ./.github/workflows/actions/install-node
@@ -62,7 +62,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v5
 
       - name: Restore dependencies
         uses: ./.github/workflows/actions/install-node
@@ -119,7 +119,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v5
 
       - name: Restore dependencies
         uses: ./.github/workflows/actions/install-node
@@ -162,7 +162,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v5
 
       - name: Restore dependencies
         uses: ./.github/workflows/actions/install-node
@@ -197,7 +197,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v5
 
       - name: Restore build
         uses: ./.github/workflows/actions/build
