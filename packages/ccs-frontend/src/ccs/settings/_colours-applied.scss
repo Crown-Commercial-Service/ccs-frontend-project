@@ -13,22 +13,13 @@
 /// @type Colour
 /// @access public
 
-$ccs-brand-colour: ccs-colour("red") !default;
+$ccs-brand-colour: ccs-colour("light-blue") !default;
 
 /// Text colour
 ///
 /// @type Colour
 /// @access public
 
-
-/// Border colour
-///
-/// Used in for example borders, separators, rules and keylines.
-///
-/// @type Colour
-/// @access public
-
-$ccs-border-colour: ccs-colour("mid-grey") !default;
 
 /// Button colour
 ///
@@ -37,4 +28,13 @@ $ccs-border-colour: ccs-colour("mid-grey") !default;
 /// @type Colour
 /// @access public
 
-$govuk-button-background-colour: ccs-colour("button-green") !default;
+$govuk-button-background-colour: ccs-colour("light-green") !default;
+
+/// Button component text colour
+///
+/// Override the GOV.UK Button text colour
+/// 
+/// @type Colour
+/// @access public
+
+$govuk-button-text-colour: govuk-colour("black") !default;

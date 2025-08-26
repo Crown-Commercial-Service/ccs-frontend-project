@@ -107,10 +107,10 @@ describe('packageResolveToPath', () => {
     },
     {
       packageEntry: 'ccs-frontend/src/ccs/all.ts',
-      options: { modulePath: 'components/header/header.ts' },
+      options: { modulePath: 'components/password-strength/password-strength.ts' },
       resolvedPath: join(
         paths.package,
-        'src/ccs/components/header/header.ts'
+        'src/ccs/components/password-strength/password-strength.ts'
       )
     }
   ]
@@ -136,21 +136,21 @@ describe('packageTypeToPath', () => {
     },
     {
       packageName: 'ccs-frontend',
-      options: { modulePath: 'components/header/header.bundle.js' },
+      options: { modulePath: 'components/password-strength/password-strength.bundle.js' },
       resolvedPath: join(
         paths.package,
-        'dist/ccs/components/header/header.bundle.js'
+        'dist/ccs/components/password-strength/password-strength.bundle.js'
       )
     },
     {
       packageName: 'ccs-frontend',
       options: {
-        modulePath: 'components/header/header.bundle.mjs',
+        modulePath: 'components/password-strength/password-strength.bundle.mjs',
         type: 'module'
       },
       resolvedPath: join(
         paths.package,
-        'dist/ccs/components/header/header.bundle.mjs'
+        'dist/ccs/components/password-strength/password-strength.bundle.mjs'
       )
     }
   ]

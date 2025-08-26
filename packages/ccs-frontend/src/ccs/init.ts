@@ -1,5 +1,4 @@
 import { CCSFrontendComponent } from './ccs-frontend-component'
-import { Header } from './components/header/header'
 import { PasswordStrength } from './components/password-strength/password-strength'
 
 const createAll = (Component: typeof CCSFrontendComponent) => {
@@ -10,7 +9,6 @@ const createAll = (Component: typeof CCSFrontendComponent) => {
 
 const initAll = () => {
   const components: Array<typeof CCSFrontendComponent> = [
-    Header,
     PasswordStrength,
   ]
 

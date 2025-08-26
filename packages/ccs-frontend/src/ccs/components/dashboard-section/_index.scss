@@ -1,6 +1,6 @@
 @include ccs-exports("ccs/component/dashboard-section") {
-  $ccs-dashboard-panel-border-colour: ccs-colour("grey");
-  $ccs-dashboard-panel-background-colour: ccs-colour("light-grey");
+  $ccs-dashboard-panel-border-colour: ccs-colour("light-green");
+  $ccs-dashboard-panel-background-colour: govuk-colour("white");
 
   .ccs-dashboard-section__container {
     @extend %govuk-body-m;
@@ -17,6 +17,7 @@
 
   .ccs-dashboard-section__heading-section-break {
     margin-bottom: govuk-spacing(5);
+    border-bottom-color: $ccs-dashboard-panel-border-colour;
   }
 
   .ccs-dashboard-section__panel {
@@ -24,6 +25,7 @@
     margin-left: 15px;
     padding: 10px;
     border: 1px $ccs-dashboard-panel-border-colour solid;
+    border-top: govuk-spacing(1) $ccs-dashboard-panel-border-colour solid;
     background: $ccs-dashboard-panel-background-colour;
 
     @include govuk-media-query ($from: tablet) {

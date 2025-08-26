@@ -1,9 +1,7 @@
 @include ccs-exports("ccs/component/header") {
   $ccs-header-background: $ccs-brand-colour;
-  $ccs-header-service-authentication-background: ccs-colour("black");
-  $ccs-header-text: govuk-colour("white");
-  $ccs-header-link-active-border-color: govuk-colour("white");
-  $ccs-header-nav-item-border-color: ccs-colour("dark-red");
+  $ccs-header-text: govuk-colour("black");
+  $ccs-header-print-colour: govuk-colour("black");
   $ccs-header-link-underline-thickness: 3px;
 
   .ccs-header {
@@ -15,65 +13,15 @@
 
   .ccs-header__container--full-width {
     padding: 0 govuk-spacing(3);
-
-    .ccs-header__menu-button {
-      right: govuk-spacing(3);
-    }
-  }
-
-  .ccs-header__container,
-  .ccs-header__service-authentication-container {
-    @include govuk-clearfix;
-    position: relative;
   }
 
   .ccs-header__container {
+    @include govuk-clearfix;
+    position: relative;
     padding-top: govuk-spacing(2);
   }
 
-  .ccs-header__service-authentication-container {
-    padding-top: govuk-spacing(1);
-    padding-bottom: govuk-spacing(1);
-  }
-
-  .ccs-header__service-authentication {
-    background: $ccs-header-service-authentication-background;
-    text-align: right;
-  }
-
-  .ccs-header__service-authentication-item {
-    display: inline-block;
-    margin-right: govuk-spacing(3);
-    padding: govuk-spacing(2) 0;
-    border: 0;
-
-    @include govuk-media-query ($from: desktop) {
-      padding: govuk-spacing(1) 0;
-    }
-
-    a, button {
-      @include govuk-font($size: 16, $weight: bold);
-    }
-  }
-
-  .ccs-header__service-authentication-list .ccs-header__service-authentication-item:last-child {
-    margin-right: 0;
-    border-bottom: 0;
-  }
-
-  .ccs-header__button_as_link {
-    display: inline;
-    padding: 0;
-    border: 0;
-    color: currentcolor;
-    background: transparent;
-    font: inherit;
-    cursor: pointer;
-
-    -webkit-appearance: none;
-  }
-
-  .ccs-header__link, .ccs-header__button_as_link {
+  .ccs-header__link {
     // Avoid using the `govuk-link-common` mixin because the links in the header
     // get a special treatment, because:
     //
@@ -82,7 +30,11 @@
     //   multiple grouped elements close to one another and having slightly
     //   different underline widths looks unbalanced
     @include govuk-typography-common;
-    @include govuk-link-style-inverse;
+
+    &:link,
+    &:visited {
+      color: govuk-colour("black");
+    }
 
     border-bottom: solid .125rem transparent;
     text-decoration: none;
@@ -130,20 +82,10 @@
       margin-bottom: 0;
     }
   }
-
-  .ccs-header__link--service-name {
-    display: inline-block;
-    margin-bottom: govuk-spacing(2);
-    @include govuk-font($size: 24, $weight: bold);
-  }
-
-  .ccs-header__logo,
-  .ccs-header__content {
-    box-sizing: border-box;
-  }
-
+  
   .ccs-header__logo {
     @include govuk-responsive-padding(2, "bottom");
+    box-sizing: border-box;
     padding-right: govuk-spacing(8);
 
     @include govuk-media-query ($from: desktop) {
@@ -154,194 +96,17 @@
     }
   }
 
-  .ccs-header__content {
-    text-align: left;
-
-    @include govuk-media-query ($from: desktop) {
-      width: 75%;
-      padding-left: $govuk-gutter-half;
-      float: left;
-    }
-  }
-
-  .ccs-header__menu-button {
-    @include govuk-font($size: 16);
-    display: none;
-    position: absolute;
-    top: govuk-spacing(4);
-    right: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    color: govuk-colour("white");
-    background: none;
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: solid underline $ccs-header-link-underline-thickness;
-
-      @if $govuk-link-underline-offset {
-        text-underline-offset: $govuk-link-underline-offset;
-      }
-    }
-
-    &:focus {
-      @include govuk-focused-text;
-    }
-
-    &::after {
-      @include govuk-shape-arrow($direction: down, $base: 10px, $display: inline-block);
-      content: "";
-      margin-left: govuk-spacing(1);
-    }
-
-    @include govuk-media-query ($from: tablet) {
-      top: govuk-spacing(3);
-    }
-  }
-
-  .ccs-header__menu-button--open {
-    &::after {
-      @include govuk-shape-arrow($direction: up, $base: 10px, $display: inline-block);
-    }
-  }
-
-  .ccs-header__navigation {
-    @include govuk-media-query ($from: desktop) {
-      margin-bottom: govuk-spacing(2);
-    }
-  }
-
-  .ccs-header__service-authentication-list,
-  .ccs-header__navigation-primary-list,
-  .ccs-header__navigation-secondary-list {
-    // Reset user-agent default list styles
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .ccs-header__navigation--no-second-list {
-    @include govuk-media-query ($from: desktop) {
-      padding-top: govuk-spacing(6);
-    }
-  }
-
-  .js-enabled {
-    .ccs-header__menu-button {
-      display: block;
-      @include govuk-media-query ($from: desktop) {
-        display: none;
-      }
-    }
-
-    .ccs-header__navigation-lists {
-      display: none;
-      @include govuk-media-query ($from: desktop) {
-        display: block;
-      }
-    }
-
-    .ccs-header__navigation-lists--open {
-      display: block;
-    }
-  }
-
-  .ccs-header__navigation--end {
-    @include govuk-media-query ($from: desktop) {
-      margin: 0;
-      padding: govuk-spacing(1) 0;
-      text-align: right;
-    }
-  }
-
-  .ccs-header__navigation--no-service-name {
-    @include govuk-media-query ($from: desktop) {
-      padding-top: govuk-spacing(7);
-    }
-  }
-
-  .ccs-header__navigation-secondary-list {
-    .ccs-header__navigation-item {
-      a, button {
-        @include govuk-font($size: 16, $weight: regular);
-      }
-    }
-  }
-
-  .ccs-header__navigation-item {
-    padding: govuk-spacing(2) 0;
-    border-bottom: 1px solid $ccs-header-nav-item-border-color;
-
-    @include govuk-media-query ($from: desktop) {
-      display: inline-block;
-      margin-right: govuk-spacing(3);
-      padding: govuk-spacing(1) 0;
-      border: 0;
-    }
-
-    a, button {
-      @include govuk-font($size: 16, $weight: bold);
-      white-space: nowrap;
-    }
-  }
-
-  .ccs-header__navigation-item--active {
-    button {
-      // color: $ccs-header-link-active;
-      border-color: $ccs-header-link-active-border-color;
-      color: inherit;
-      background-color: transparent;
-    }
-
-    a {
-      &:link,
-      &:hover,
-      &:visited {
-        // color: $ccs-header-link-active;
-        border-color: $ccs-header-link-active-border-color;
-        color: inherit;
-        background-color: transparent;
-      }
-    }
-
-    a, button {
-      // When focussed, the text colour needs to be darker to ensure that colour
-      // contrast is still acceptable
-      &:focus {
-        @include govuk-focused-text;
-
-        border-color: $govuk-focus-colour;
-      }
-    }
-  }
-
-  .ccs-header__navigation-primary-list .ccs-header__navigation-item:last-child {
-    margin-right: 0;
-    border-bottom: 0;
-  }
-
-  .ccs-header__navigation-secondary-list .ccs-header__navigation-item:last-child {
-    margin-right: govuk-spacing(3);
-    border-bottom: 1px solid $ccs-header-nav-item-border-color;
-
-    @include govuk-media-query ($from: desktop) {
-      margin-right: 0;
-      border-bottom: 0;
-    }
-  }
-
   @include govuk-media-query($media-type: print) {
     .ccs-header {
       border-bottom-width: 0;
-      color: govuk-colour("black");
+      color: $ccs-header-print-colour;
       background: transparent;
     }
 
     .ccs-header__link {
       &:link,
       &:visited {
-        color: govuk-colour("black");
+        color: $ccs-header-print-colour;
       }
 
       // Do not append link href to GOV.UK link when printing (e.g. '(/)')

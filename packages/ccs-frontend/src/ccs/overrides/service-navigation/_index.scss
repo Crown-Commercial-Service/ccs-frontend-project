@@ -1,0 +1,29 @@
+@include ccs-exports("ccs/overrides/service-navigation") {
+  $govuk-service-navigation-link-colour: govuk-shade($govuk-link-colour, 10%);
+
+  .govuk-template--rebranded .govuk-service-navigation, .govuk-service-navigation {
+    border-bottom-color: $ccs-brand-colour
+  }
+
+  .govuk-service-navigation__button_as_link {
+    @include govuk-link-common;
+    @include govuk-link-style-no-underline;
+    @include govuk-link-style-no-visited-state;
+
+    display: inline;
+    padding: 0;
+    border: 0;
+    color: currentcolor;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+
+    &:not(:hover):not(:focus) {
+      // We set the colour here as we don't want to override the hover or
+      // focus colours
+      color: $govuk-service-navigation-link-colour;
+    }
+  }
+}

@@ -6,21 +6,41 @@ title: Digital Foundations - Facilities Management Dashboard
 
 {% from "ccs/components/header/macro.njk" import ccsHeader %}
 {% from "ccs/components/footer/macro.njk" import ccsFooter %}
+{% from "ccs/components/contact-us/macro.njk" import ccsContactUs %}
 {% from "ccs/components/dashboard-section/macro.njk" import ccsDashboardSection %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 {% set pageTitle = example.title %}
 {% block pageTitle %}{{ pageTitle }} - CCS{% endblock %}
 
 {% block header %}
-  {{ ccsHeader({
+  {{ ccsHeader() }}
+  {{ govukServiceNavigation({
     serviceName: "Find a facilities management supplier",
-    serviceAuthentication: [
+    navigation: [
       {
-        href: "#1",
-        text: "Sign out",
-        method: "delete"
+        href: "#",
+        text: "My account",
+        active: true
+      },
+      {
+        html: '
+          <form class="button_to" method="post" action="/sign-out">
+            <button class="govuk-service-navigation__button_as_link" type="submit">
+              Sign out
+            </button>
+          </form>
+        '
       }
     ]
+  }) }}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.',
+    classes: 'govuk-width-container'
   }) }}
 {% endblock %}
 
@@ -70,6 +90,7 @@ title: Digital Foundations - Facilities Management Dashboard
 {% endblock %}
 
 {% block footer %}
+  {{ ccsContactUs() }}
   {{ ccsFooter({
     meta: {
       items: [

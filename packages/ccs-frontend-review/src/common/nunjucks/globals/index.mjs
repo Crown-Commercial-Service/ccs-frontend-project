@@ -3,3 +3,4 @@
  */
 export { getHTMLCode } from './get-html-code.mjs'
 export { getNunjucksCode } from './get-nunjucks-code.mjs'
+export { govukRebrand } from './govuk-rebrand.mjs'

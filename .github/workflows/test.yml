@@ -213,8 +213,8 @@ jobs:
       - run: node --eval "console.log(require.resolve('ccs-frontend/package.json'))"${{ env.FLAGS }}
         working-directory: packages/ccs-frontend
 
-      - run: node --eval "console.log(require.resolve('ccs-frontend/dist/ccs/components/header/header.bundle.js'))"${{ env.FLAGS }}
+      - run: node --eval "console.log(require.resolve('ccs-frontend/dist/ccs/components/password-strength//password-strength.bundle.js'))"${{ env.FLAGS }}
         working-directory: packages/ccs-frontend
 
-      - run: node --eval "console.log(require.resolve('ccs-frontend/dist/ccs/components/header/header.bundle.mjs'))"${{ env.FLAGS }}
+      - run: node --eval "console.log(require.resolve('ccs-frontend/dist/ccs/components//password-strength//password-strength.bundle.mjs'))"${{ env.FLAGS }}
         working-directory: packages/ccs-frontend
