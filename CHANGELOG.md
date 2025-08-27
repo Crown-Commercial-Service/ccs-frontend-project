@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Added overrides for GOV.UK Service Navigation to match new CCS brand colours
+
+### Changed
+
+- Change to the CCS branding from "professional claret" to "reassured cornflower blue"
+- Add the new CCS branding colours to the CCS colour palette
+
+### Removed
+
+- With update to CCS branding remove all existing CCS colours, except black, from the CCS colour palette
+- The CCS Header is now just the logo as all other parts should now go in the GOV.UK Service Navigation component
+
 ## [1.4.1] - 2025-05-12
 
 ### Changed

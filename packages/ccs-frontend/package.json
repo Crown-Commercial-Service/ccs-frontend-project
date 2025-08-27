@@ -82,7 +82,7 @@
     "typescript": "^5.9.2"
   },
   "peerDependencies": {
-    "govuk-frontend": "^5.11.1",
+    "govuk-frontend": "^5.11.2",
     "jquery": "^3.x"
   }
 }

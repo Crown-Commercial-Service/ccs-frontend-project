@@ -1,10 +1,7 @@
 @include ccs-exports("ccs/component/footer") {
-  $ccs-footer-background: ccs-colour("black");
-  $ccs-footer-border: $ccs-border-colour;
-  // This variable can be removed entirely once the legacy palette goes away,
-  // as it'll just be the same as $ccs-footer-border.
-  $ccs-footer-border-top: $ccs-border-colour;
-  $ccs-footer-text: govuk-colour("white");
+  $ccs-footer-background: $govuk-template-background-colour;
+  $ccs-footer-border: govuk-colour("dark-grey");
+  $ccs-footer-text: govuk-colour("black");
 
   $ccs-footer-columns-to-rows-point: 501px;
 
@@ -13,7 +10,7 @@
     @include govuk-responsive-padding(7, "top");
     @include govuk-responsive-padding(5, "bottom");
 
-    border-top: 1px solid $ccs-footer-border-top;
+    border-top: govuk-spacing(1) solid $ccs-brand-colour;
     color: $ccs-footer-text;
     background: $ccs-footer-background;
   }
