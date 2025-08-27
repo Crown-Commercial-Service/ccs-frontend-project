@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+
+- Fixed issue where the colour of the buttons did not come through correctly
+
 ## [2.0.0] - 2025-08-27
 
 ### Added
