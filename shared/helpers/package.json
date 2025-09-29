@@ -14,7 +14,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@axe-core/puppeteer": "^4.10.1",
+    "@axe-core/puppeteer": "^4.10.2",
     "@ccs-frontend/config": "*",
     "@ccs-frontend/lib": "*",
     "cheerio": "^1.1.2",
