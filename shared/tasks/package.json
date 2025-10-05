@@ -16,7 +16,7 @@
     "gulp-cli": "^3.0.0",
     "plugin-error": "^2.0.1",
     "postcss-load-config": "^6.0.1",
-    "rollup": "^4.52.3",
+    "rollup": "^4.52.4",
     "sass-embedded": "^1.93.2",
     "slug": "^9.1.0"
   }
