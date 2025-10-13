@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+
+- Updated GOV.UK Frontend to [v5.13.0](https://github.com/alphagov/govuk-frontend/releases/tag/v5.13.0)
+
 ## [2.0.1] - 2025-08-27
 
 ### Fixed
