@@ -32,7 +32,7 @@
     "jquery": "^3.7.1",
     "marked": "^16.4.1",
     "marked-linkify-it": "^3.1.13",
-    "marked-smartypants": "^1.1.10",
+    "marked-smartypants": "^1.1.11",
     "outdent": "^0.8.0",
     "shuffle-seed": "^1.1.6",
     "slash": "^3.0.0",
