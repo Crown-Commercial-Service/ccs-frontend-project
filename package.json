@@ -3,8 +3,8 @@
   "name": "@ccs-frontend/repository",
   "description": "Used only for the development of CCS Frontend, see `packages/ccs-frontend/package.json` for the published `package.json`",
   "engines": {
-    "node": "^22.11.0",
-    "npm": "^11.1.0"
+    "node": "^24.11.1",
+    "npm": "^11.6.3"
   },
   "license": "MIT",
   "workspaces": [

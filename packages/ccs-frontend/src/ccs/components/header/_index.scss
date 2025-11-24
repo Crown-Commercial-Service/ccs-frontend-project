@@ -88,7 +88,7 @@
     box-sizing: border-box;
     padding-right: govuk-spacing(8);
 
-    @include govuk-media-query ($from: desktop) {
+    @media #{govuk-from-breakpoint(desktop)} {
       width: 25%;
       padding-right: $govuk-gutter-half;
       float: left;
@@ -96,7 +96,7 @@
     }
   }
 
-  @include govuk-media-query($media-type: print) {
+  @media print {
     .ccs-header {
       border-bottom-width: 0;
       color: $ccs-header-print-colour;
