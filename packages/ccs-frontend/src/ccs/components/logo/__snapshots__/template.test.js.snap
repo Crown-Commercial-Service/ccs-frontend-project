@@ -4,8 +4,8 @@ exports[`logo component renders the logo 1`] = `
 <span class="ccs-logo">
   <svg class="ccs-logo__svg ccs-logo__svg--stacked"
        xmlns="http://www.w3.org/2000/svg"
-       height="121"
        width="132.22"
+       height="121"
        aria-hidden="true"
        focusable="false"
        viewbox="0 0 371.06668 339.57333"
@@ -347,7 +347,7 @@ exports[`logo component renders the logo 1`] = `
       </g>
     </g>
   </svg>
-  <svg class="ccs-logo__svg--linear"
+  <svg class="ccs-logo__svg ccs-logo__svg--linear"
        xmlns="http://www.w3.org/2000/svg"
        width="320"
        height="48.5"
