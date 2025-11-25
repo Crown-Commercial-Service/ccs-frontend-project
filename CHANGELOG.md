@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+
+- Internal update to use NodeJS LTS Krypton (v24)
+- Update the CCS Logo to include the linear version
+- Update media queries to use new SCCS functions from GOV.UK Frontend
+
 ## [2.1.0] - 2025-10-13
 
 ### Changed

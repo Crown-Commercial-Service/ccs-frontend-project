@@ -18,6 +18,10 @@
     vertical-align: top;
   }
 
+  .ccs-logo__svg--linear {
+    display: none;
+  }
+
   .ccs-logo__fallback-image {
     width: 36px;
     height: 32px;
@@ -38,10 +42,23 @@
     stroke: none
   }
 
-  @include govuk-media-query($media-type: print) {
+  @media print {
     // Hide the inverted crown when printing in browsers that don't support SVG.
     .ccs-logo__fallback-image {
       display: none;
+    }
+  }
+
+  // Only show linear logo in the header
+  .ccs-header {
+    @media #{govuk-from-breakpoint(tablet)} {
+      .ccs-logo__svg--stacked {
+        display: none;
+      }
+  
+      .ccs-logo__svg--linear {
+        display: block;
+      }
     }
   }
 }

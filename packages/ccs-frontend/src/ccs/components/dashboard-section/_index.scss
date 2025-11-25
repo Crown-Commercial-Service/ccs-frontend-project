@@ -5,7 +5,7 @@
   .ccs-dashboard-section__container {
     @extend %govuk-body-m;
 
-    @include govuk-media-query ($from: tablet) {
+    @media #{govuk-from-breakpoint(tablet)} {
       display: flex;
     }
   }
@@ -28,7 +28,7 @@
     border-top: govuk-spacing(1) $ccs-dashboard-panel-border-colour solid;
     background: $ccs-dashboard-panel-background-colour;
 
-    @include govuk-media-query ($from: tablet) {
+    @media #{govuk-from-breakpoint(tablet)} {
       margin-right: 10px;
       margin-left: 10px;
 
