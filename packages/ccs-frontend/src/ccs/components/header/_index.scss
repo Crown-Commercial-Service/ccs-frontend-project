@@ -84,7 +84,7 @@
   }
   
   .ccs-header__logo {
-    @include govuk-responsive-padding(2, "bottom");
+    @include govuk-responsive-padding(1, "bottom");
     box-sizing: border-box;
     padding-right: govuk-spacing(8);
 
