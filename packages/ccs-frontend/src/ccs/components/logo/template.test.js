@@ -14,4 +14,13 @@ describe('logo component', () => {
 
     expect(htmlWithClassName($, '.ccs-logo')).toMatchSnapshot()
   })
+
+  it('renders the logo with only the crown', () => {
+    const $ = render('logo', examples['with crown only'])
+
+    const $componentSvg = $('.ccs-log__svg')
+
+    expect($componentSvg.hasClass('ccs-logo__svg--stacked')).toBeFalsy()
+    expect($componentSvg.hasClass('ccs-logo__svg--linear')).toBeFalsy()
+  })
 })

@@ -34,16 +34,6 @@
       <hr class="ccs-footer__section-break">
     {% endif %}
     <div class="ccs-footer__meta">
-      <div class="ccs-footer__meta-item">
-        <div class="ccs-footer__logo">
-          {{ ccsLogo() }}
-        </div>
-        <div class="ccs-footer__copyright">
-          <a class="ccs-footer__link"
-            href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
-          >© Crown copyright</a>
-        </div>
-      </div>
       <div class="ccs-footer__meta-item ccs-footer__meta-item--grow">
         {% if params.meta %}
           <h2 class="govuk-visually-hidden">{{ params.meta.visuallyHiddenTitle | default("Support links") }}</h2>
@@ -65,6 +55,18 @@
             </div>
           {% endif %}
         {% endif %}
+      </div>
+      <div class="ccs-footer__meta-item">
+        <div class="ccs-footer__copyright">
+          <a class="ccs-footer__link"
+            href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+          >
+            <div class="ccs-footer__logo">
+              {{ ccsLogo({showOnlyCrown: true}) }}
+            </div>
+            © Crown copyright
+          </a>
+        </div>
       </div>
     </div>
   </div>

@@ -2,3 +2,6 @@ params: []
 examples:
   - name: default
     options: {}
+  - name: with crown only
+    options:
+      showOnlyCrown: true

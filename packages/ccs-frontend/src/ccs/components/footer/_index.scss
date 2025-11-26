@@ -48,19 +48,13 @@
     flex-wrap: wrap; // Support: Flexbox
     align-items: flex-end; // Support: Flexbox
     justify-content: center; // Support: Flexbox
-    text-align: right;
+    text-align: left;
   }
 
   .ccs-footer__meta-item {
     margin-right: $govuk-gutter-half;
     margin-bottom: govuk-spacing(5);
     margin-left: $govuk-gutter-half;
-
-    @media #{govuk-until-breakpoint($until: $ccs-footer-columns-to-rows-point)} {
-      &:first-child {
-        order: 2;
-      }
-    }
   }
 
   .ccs-footer__meta-item--grow {
@@ -93,8 +87,8 @@
 
   .ccs-footer__inline-list-item {
     display: inline-block;
+    margin-right: govuk-spacing(3);
     margin-bottom: govuk-spacing(1);
-    margin-left: govuk-spacing(3);
 
     @media #{govuk-until-breakpoint(tablet)} {
       margin-right: govuk-spacing(3);
@@ -164,6 +158,7 @@
   .ccs-footer__logo {
     @include govuk-responsive-margin(5, "bottom");
     box-sizing: border-box;
+    padding-left: govuk-spacing(3);
 
     @media #{govuk-from-breakpoint(tablet)} {
       width: 100%;
