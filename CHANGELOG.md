@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## Changed
+
+- Update the footer to just use the crown and to put it in the bottom right
+
 ## [2.2.1] - 2025-11-25
 
 ### Fixed
