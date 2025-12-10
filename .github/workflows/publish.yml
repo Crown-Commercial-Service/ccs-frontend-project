@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write
+  contents: write
+
 concurrency:
   group: publish
 
@@ -89,6 +93,9 @@ jobs:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
 
+      - name: Update npm
+        run: npm install -g npm@latest
+
       - name: Install NPM dependencies
         run: npm install
 
@@ -97,5 +104,3 @@ jobs:
 
       - name: Publish package
         run: npm publish --workspace ccs-frontend --tag $(${{ contains(needs.check_for_release.outputs.npm, 'beta') }} && echo "next" || echo "latest")
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
