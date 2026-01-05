@@ -43,7 +43,7 @@
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "autoprefixer": "^10.4.22",
+    "autoprefixer": "^10.4.23",
     "browser-sync": "^3.0.4",
     "cssnano": "^7.1.2",
     "cssnano-preset-default": "^7.0.1",
