@@ -41,8 +41,8 @@
     "lint:scss:cli": "stylelint --cache --cache-location .cache/stylelint --cache-strategy content --color --ignore-path .gitignore --max-warnings 0"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.5",
-    "@babel/preset-env": "^7.28.5",
+    "@babel/core": "^7.28.6",
+    "@babel/preset-env": "^7.28.6",
     "@ccs-frontend/config": "*",
     "@ccs-frontend/helpers": "*",
     "@ccs-frontend/lib": "*",
