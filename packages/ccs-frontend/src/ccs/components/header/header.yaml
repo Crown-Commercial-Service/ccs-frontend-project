@@ -7,6 +7,10 @@ params:
     type: string
     required: false
     description: The public path for the assets folder. If not provided it defaults to /assets/images
+  - name: useGcaBranding
+    type: boolean
+    required: false
+    description: Flag to indicate if new Government Commercial Agency branding should be used
 
 previewLayout: full-width
 
@@ -38,6 +42,11 @@ examples:
     options:
       containerClasses: ccs-header__container--full-width
       navigationClasses: ccs-header__navigation--end
+
+  - name: with GCA branding
+    description: The standard header as used on information pages on GOV.UK
+    options:
+      useGcaBranding: true
 
   # Hidden examples are not shown in the review app, but are used for tests and HTML fixtures
   - name: attributes

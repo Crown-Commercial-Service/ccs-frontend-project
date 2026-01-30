@@ -40,5 +40,15 @@ describe('Header', () => {
       const $homepageLink = $component.find('.ccs-header__link--homepage')
       expect($homepageLink.attr('href')).toEqual('/')
     })
+
+    it('renders the Government Commercial Agency logo when useGcaBranding is true', () => {
+      const $ = render('header', examples['with GCA branding'])
+
+      const $homepageLink = $('.ccs-header__link--homepage')
+      const $logoText = $('.ccs-logo__text')
+
+      expect($homepageLink.attr('href')).toEqual('https://www.gca.gov.uk')
+      expect($logoText.text().trim()).toBe('Government Commercial Agency')
+    })
   })
 })
