@@ -6,7 +6,7 @@
     &.ccs-password-strength-tests {
       .ccs-password-strength-tests__wrong {
         list-style-image: url("data:image/svg+xml,%3Csvg height='14' viewBox='0 0 14 14' width='14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m46 1385.41176-4.5882353 4.58824-2.4117647-2.41176 4.5882353-4.58824-4.5882353-4.58824 2.4117647-2.41176 4.5882353 4.58824 4.5882353-4.58824 2.4117647 2.41176-4.5882353 4.58824 4.5882353 4.58824-2.4117647 2.41176z' fill='%23b10e1e' fill-rule='evenodd' transform='matrix(-1 0 0 1 53 -1376)'/%3E%3C/svg%3E");
-        color: $govuk-error-colour;
+        color: govuk-functional-colour(error);
       }
       
       .ccs-password-strength-tests__correct {

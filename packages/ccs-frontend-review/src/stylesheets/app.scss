@@ -1,7 +1,4 @@
-$govuk-show-breakpoints: true;
-$govuk-new-typography-scale: true;
-
-@import "ccs/all";
+@import "ccs/index";
 @import "partials/app";
 @import "partials/code";
 @import "partials/banner";

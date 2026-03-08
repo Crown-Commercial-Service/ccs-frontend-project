@@ -72,7 +72,7 @@ describe('dist/', () => {
 
     it('should contain relative paths to sources', () => {
       expect(sourcemap.sources).toContain(
-        '../packages/ccs-frontend/src/ccs/all.scss'
+        '../packages/ccs-frontend/src/ccs/index.scss'
       )
       expect(sourcemap.sources).toContain(
         '../packages/ccs-frontend/src/ccs/core/_ccs-frontend-properties.scss'
