@@ -30,7 +30,7 @@
     "highlight.js": "^11.11.1",
     "iframe-resizer": "^4.4.5",
     "jquery": "^4.0.0",
-    "marked": "^17.0.2",
+    "marked": "^17.0.4",
     "marked-linkify-it": "^3.1.14",
     "marked-smartypants": "^1.1.11",
     "outdent": "^0.8.0",
