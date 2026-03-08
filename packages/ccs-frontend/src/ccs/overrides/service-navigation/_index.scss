@@ -1,7 +1,7 @@
 @include ccs-exports("ccs/overrides/service-navigation") {
-  $govuk-service-navigation-link-colour: govuk-shade($govuk-link-colour, 10%);
+  $govuk-service-navigation-link-colour: govuk-functional-colour(link);
 
-  .govuk-template--rebranded .govuk-service-navigation, .govuk-service-navigation {
+  .govuk-service-navigation {
     border-bottom-color: $ccs-brand-colour
   }
 

@@ -18,7 +18,7 @@ title: Create a Print Marketplace buyer account
 {% set pageTitle = example.title %}
 {% block pageTitle %}{{ pageTitle }} - CCS{% endblock %}
 
-{% block header %}
+{% block govukHeader %}
   {{ ccsHeader() }}
   {{ govukServiceNavigation({
     serviceName: "Sign in to the Print Marketplace",
@@ -29,6 +29,8 @@ title: Create a Print Marketplace buyer account
       }
     ]
   }) }}
+{% endblock %}
+{% block headerEnd %}
   {{ govukPhaseBanner({
     tag: {
       text: "Beta"
@@ -151,7 +153,7 @@ title: Create a Print Marketplace buyer account
 </div>
 {% endblock %}
 
-{% block footer %}
+{% block govukFooter %}
   {{ ccsContactUs() }}
   {{ ccsFooter({
     meta: {

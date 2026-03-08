@@ -1,5 +1,5 @@
 @include ccs-exports("ccs/component/contact-us") {
-  $ccs-ccs-contact-us-background-color: $govuk-template-background-colour;
+  $ccs-ccs-contact-us-background-color: govuk-functional-colour(template-background);
  
   .ccs-contact-us {
     padding: govuk-spacing(1);

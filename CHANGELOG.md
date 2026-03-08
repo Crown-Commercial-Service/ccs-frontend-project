@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+
+- Updated GOV.UK Frontend to [v6.1.0](https://github.com/alphagov/govuk-frontend/releases/tag/v6.1.0)
+
+### Removed
+
+- Removed deprectaed `ccs/all.scss` and use `ccs/index.scss`
+
 ## [2.5.0] - 2026-01-30
 
 ### Added

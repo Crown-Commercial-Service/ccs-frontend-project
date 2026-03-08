@@ -113,8 +113,8 @@ describe('packages/ccs-frontend/dist/', () => {
 
       // Only sass package entry is compiled to minified CSS bundle
       .flatMap(
-        mapPathTo(['**/ccs/all.scss'], ({ dir: requirePath }) => [
-          join(requirePath, 'all.scss'),
+        mapPathTo(['**/ccs/index.scss'], ({ dir: requirePath }) => [
+          join(requirePath, 'index.scss'),
 
           // CSS bundle, minified
           join(requirePath, 'ccs-frontend.min.css'),
@@ -165,9 +165,9 @@ describe('packages/ccs-frontend/dist/', () => {
   })
 
   describe('Sass stylesheets', () => {
-    describe('all.scss', () => {
+    describe('index.scss', () => {
       it('should compile without throwing an exception', async () => {
-        const file = join(paths.package, 'dist/ccs/all.scss')
+        const file = join(paths.package, 'dist/ccs/index.scss')
         await expect(compileSassFile(file)).resolves.not.toThrow()
       })
     })

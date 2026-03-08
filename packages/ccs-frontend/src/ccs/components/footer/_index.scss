@@ -1,6 +1,6 @@
 @include ccs-exports("ccs/component/footer") {
-  $ccs-footer-background: $govuk-template-background-colour;
-  $ccs-footer-border: govuk-colour("dark-grey");
+  $ccs-footer-background: govuk-functional-colour(template-background);
+  $ccs-footer-border: govuk-colour("black", $variant: "tint-25");
   $ccs-footer-text: govuk-colour("black");
 
   $ccs-footer-columns-to-rows-point: 501px;
@@ -26,11 +26,11 @@
 
     &:active,
     &:focus {
-      color: $govuk-focus-text-colour;
+      color: govuk-functional-colour(focus-text);
     }
 
     &:link:focus {
-      @include govuk-text-colour;
+      color: govuk-functional-colour(text);
     }
   }
 

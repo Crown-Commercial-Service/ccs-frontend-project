@@ -14,7 +14,7 @@ title: Digital Foundations - Facilities Management Dashboard
 {% set pageTitle = example.title %}
 {% block pageTitle %}{{ pageTitle }} - CCS{% endblock %}
 
-{% block header %}
+{% block govukHeader %}
   {{ ccsHeader() }}
   {{ govukServiceNavigation({
     serviceName: "Find a facilities management supplier",
@@ -35,6 +35,8 @@ title: Digital Foundations - Facilities Management Dashboard
       }
     ]
   }) }}
+{% endblock %}
+{% block headerEnd %}
   {{ govukPhaseBanner({
     tag: {
       text: "Beta"
@@ -89,7 +91,7 @@ title: Digital Foundations - Facilities Management Dashboard
 </div>
 {% endblock %}
 
-{% block footer %}
+{% block govukFooter %}
   {{ ccsContactUs() }}
   {{ ccsFooter({
     meta: {

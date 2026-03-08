@@ -37,7 +37,7 @@ export const watch = (options) =>
      */
     task.name('compile:scss watch', () =>
       gulp.watch(
-        ['**/*.scss', join(paths.package, 'dist/ccs/all.scss')],
+        ['**/*.scss', join(paths.package, 'dist/ccs/index.scss')],
         {
           awaitWriteFinish: true,
           cwd: options.srcPath,
