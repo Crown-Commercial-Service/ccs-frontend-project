@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+
+- use a `div` for CCS Header rather than `header` to align with GOV.Uk Frontend v6
+- use a `div` for CCS Footer rather than `footer` to align with GOV.Uk Frontend v6
+
 ## [3.0.0] - 2026-03-08
 
 ### Changed
