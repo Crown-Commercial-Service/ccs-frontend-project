@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [3.1.0] - 2026-03-11
+
 ### Changed
 
 - use a `div` for CCS Header rather than `header` to align with GOV.Uk Frontend v6
