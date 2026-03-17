@@ -1,0 +1,17 @@
+@include ccs-exports("ccs/overrides/button") {
+  $ccs-button-hover-colour: ccs-colour("green", $variant: "shade-50");
+  $ccs-button-shadow-colour: ccs-colour("green", $variant: "shade-75");
+  $button-shadow-size: $govuk-border-width-form-element;
+
+  .govuk-button {
+    box-shadow: 0 $button-shadow-size 0 ccs-button-shadow-colour;
+
+    &:hover {
+      background-color: $ccs-button-hover-colour;
+
+      &[disabled] {
+        background-color: $govuk-button-background-colour;
+      }
+    }
+  }
+}

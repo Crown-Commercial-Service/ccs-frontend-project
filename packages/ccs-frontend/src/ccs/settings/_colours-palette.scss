@@ -11,14 +11,26 @@
 ///
 /// @access public
 
-$ccs-colours: (
-  "green": #a6b808,
-  "blue": #699aff,
-  "yellow": #ffc300,
-  "claret": #930047,
-  "light-green": #bcca46,
-  "light-blue": #8fb3ff,
-  "light-yellow": #ffd240,
-  "light-claret": #ae4075,
-  "black": #0b0c0c,
+$_ccs-palette: (
+  "green": (
+    "primary": #a6b808,
+    "tint-25": #bcca46,
+    "shade-50": #96a238,
+    "shade-75": #4b511c
+  ),
+  "blue": (
+    "primary": #699aff,
+    "tint-25": #8fb3ff
+  ),
+  "yellow": (
+    "primary": #ffc300,
+    "tint-25": #ffd240,
+  ),
+  "claret": (
+    "primary": #930047,
+    "tint-25": #ae4075,
+  ),
+  "black": (
+    "primary": #0b0c0c,
+  )
 ) !default;

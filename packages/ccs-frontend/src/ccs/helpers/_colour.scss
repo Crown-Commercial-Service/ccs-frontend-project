@@ -1,3 +1,6 @@
+@use "sass:meta";
+@use "sass:map";
+
 @import "../settings/colours-palette";
 
 ////
@@ -13,15 +16,27 @@
 /// @throw if `$colour` is not a colour from the colour palette
 /// @access public
 
-@function ccs-colour($colour) {
-  @if type-of($colour) == "color" {
-    // stylelint-disable-next-line scss/function-quote-no-quoted-strings-inside
-    $colour: quote("#{$colour}");
+@function ccs-colour($colour, $variant: primary) {
+  @if meta.type-of($colour) != "string" {
+    $colour: "#{$colour}";
   }
 
-  @if not map-has-key($ccs-colours, $colour) {
-    @error "Unknown colour `#{$colour}`";
+  $colour-variants: map.get($_ccs-palette, $colour);
+
+  // Some colours may not have variants, if that's the case, we can return the colour straight away
+  @if meta.type-of($colour-variants) == "color" {
+    @return $colour-variants;
   }
 
-  @return map-get($ccs-colours, $colour);
+  @if meta.type-of($colour-variants) != "map" {
+    @error "Colour `#{$colour}` should either be a `map` or `color`, not a `#{meta.type-of($colour-variants)}`";
+  }
+
+  $result: map.get($colour-variants, $variant);
+
+  @if not $result {
+    @error "Unknown variant `#{$variant}` for colour `#{$colour}` (available variants: #{map.keys($colour-variants)})";
+  }
+
+  @return $result;
 }

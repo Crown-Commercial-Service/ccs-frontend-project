@@ -13,7 +13,7 @@
 /// @type Colour
 /// @access public
 
-$ccs-brand-colour: ccs-colour("light-blue") !default;
+$ccs-brand-colour: ccs-colour("blue", $variant: "tint-25") !default;
 
 /// Text colour
 ///
@@ -28,7 +28,7 @@ $ccs-brand-colour: ccs-colour("light-blue") !default;
 /// @type Colour
 /// @access public
 
-$govuk-button-background-colour: ccs-colour("light-green") !default;
+$govuk-button-background-colour: ccs-colour("green", $variant: "tint-25") !default;
 
 /// Button component text colour
 ///
