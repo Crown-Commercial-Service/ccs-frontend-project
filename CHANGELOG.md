@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [3.1.1] - 2026-03-17
+
 ### Fixed
 
 - Fixed issue with button colours due to changes in GOV.UK Frontend v6
