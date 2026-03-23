@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
     "@ccs-frontend/config": "*",
     "@ccs-frontend/helpers": "*",
     "@ccs-frontend/lib": "*",
