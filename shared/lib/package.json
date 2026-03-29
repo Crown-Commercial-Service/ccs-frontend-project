@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "@ccs-frontend/config": "*",
-    "filesize": "^11.0.13",
+    "filesize": "^11.0.15",
     "glob": "^13.0.6",
     "js-yaml": "^4.1.1",
     "minimatch": "^10.2.4",
