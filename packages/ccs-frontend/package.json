@@ -79,7 +79,7 @@
     "postcss": "^8.5.12",
     "postcss-scss": "^4.0.9",
     "puppeteer": "^23.11.1",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "peerDependencies": {
     "govuk-frontend": "^6.1.0",
