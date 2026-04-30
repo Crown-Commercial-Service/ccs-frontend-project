@@ -5,6 +5,3 @@ examples:
   - name: with crown only
     options:
       showOnlyCrown: true
-  - name: use GCA branding
-    options:
-      useGcaBranding: true

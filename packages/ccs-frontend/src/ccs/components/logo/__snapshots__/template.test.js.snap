@@ -324,11 +324,11 @@ exports[`logo component renders the logo 1`] = `
                 transform="matrix(1,0,0,-1,20.3102,129.569)"
                 class="ccs-logo__text-graphic"
           >
-            <tspan x="0 33.2603 47.4161 72.572395 107.4747 133.2486"
+            <tspan x="0 35 62 85 110 125 149 188 212 237 250"
                    y="0"
                    sodipodi:role="line"
             >
-              Crown
+              Government
             </tspan>
             <tspan x="0 33.314499 59.416096 99.105995 138.7959 163.4126 177.5981 201.77882 210.5835 234.9653 244.37253"
                    y="53"
@@ -336,11 +336,11 @@ exports[`logo component renders the logo 1`] = `
             >
               Commercial
             </tspan>
-            <tspan x="0 29.747601 54.364799 70.161697 92.368706 101.25151 125.55521"
+            <tspan x="0 31.5 58 82.5 108 133.5"
                    y="106"
                    sodipodi:role="line"
             >
-              Service
+              Agency
             </tspan>
           </text>
         </g>
@@ -349,11 +349,11 @@ exports[`logo component renders the logo 1`] = `
   </svg>
   <svg class="ccs-logo__svg ccs-logo__svg--linear"
        xmlns="http://www.w3.org/2000/svg"
-       width="320"
+       width="378"
        height="48.5"
        aria-hidden="true"
        focusable="false"
-       viewbox="0 0 899 137"
+       viewbox="0 0 1061 137"
   >
     <g transform="matrix(1.3333333,0,0,-1.3333333,0,137)">
       <g transform="scale(0.1)">
@@ -669,11 +669,11 @@ exports[`logo component renders the logo 1`] = `
                 transform="matrix(1,0,0,-1,120,30)"
                 class="ccs-logo__text-graphic"
           >
-            <tspan x="0 33.2603 47.4161 72.572395 107.4747 133.2486 143.2486 176.5631 202.6647 242.3546 282.0445 306.6612 320.8467 345.0274 353.8321 378.2139 387.6211 397.6211 427.3687 451.9859 467.7828 489.9898 498.8726 523.1763"
+            <tspan x="0 35 62 85 110 125 149 188 212 237 250 260 293.314499 319.416096 359.105995 398.7959 423.4126 437.5981 461.77882 470.5835 494.9653 504.37253 515 546.5 573 597.5 623 648.5"
                    y="0"
                    sodipodi:role="line"
             >
-              Crown Commercial Service
+              Government Commercial Agency
             </tspan>
           </text>
         </g>
@@ -683,7 +683,7 @@ exports[`logo component renders the logo 1`] = `
   <span class="ccs-logo__text"
         hidden="hidden"
   >
-    Crown Commercial Service
+    Government Commercial Agency
   </span>
 </span>
 `;

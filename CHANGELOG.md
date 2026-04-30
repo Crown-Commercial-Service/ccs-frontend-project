@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+
+- Removed the CCS branding now we have migrated the organisation to GCA
+
 ## [3.1.1] - 2026-03-17
 
 ### Fixed
