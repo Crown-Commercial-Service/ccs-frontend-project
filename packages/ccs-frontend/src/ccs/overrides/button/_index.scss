@@ -3,7 +3,7 @@
   $ccs-button-shadow-colour: ccs-colour("green", $variant: "shade-75");
   $button-shadow-size: $govuk-border-width-form-element;
 
-  .govuk-button {
+  .govuk-button:not(.govuk-button--secondary):not(.govuk-button--warning) {
     box-shadow: 0 $button-shadow-size 0 ccs-button-shadow-colour;
 
     &:hover {
