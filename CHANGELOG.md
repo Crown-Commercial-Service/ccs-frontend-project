@@ -7,17 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [3.2.0] - 2026-05-01
+
 ### Changed
 
 - Removed the CCS branding now we have migrated the organisation to GCA
 
-### Fixed
+### Fixed
 
 - Fixed issue where secondary and warning buttons would have the wrong shadow colour
 
 ## [3.1.1] - 2026-03-17
 
-### Fixed
+### Fixed
 
 - Fixed issue with button colours due to changes in GOV.UK Frontend v6
 
