@@ -19,7 +19,7 @@ jobs:
   check_for_release:
     needs: [test]
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     outputs:
       npm: ${{ steps.package_version.outputs.npm }}
@@ -50,7 +50,7 @@ jobs:
 
     needs: [check_for_release]
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     permissions:
       id-token: write
@@ -79,7 +79,7 @@ jobs:
   publish:
     if: ${{ needs.check_for_release.outputs.exists == 'false' }}
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     needs: [release, check_for_release]
 
